@@ -1,4 +1,16 @@
-%YAML 1.1
+#!/usr/bin/env python3
+"""
+Cria a MainMenu.unity scene com o MainMenuManager já configurado
+Baseado no sistema do Invisible Scars que funciona perfeitamente
+"""
+
+import os
+import sys
+
+def create_main_menu_scene():
+    """Cria a scene MainMenu com todas as configurações necessárias"""
+    
+    scene_content = """%YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 --- !u!29 &1
 OcclusionCullingSettings:
@@ -163,6 +175,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 1234567890}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4e8c3a5b1d6e7c8a9b0c1d2e3f4a5b6, type: 3}
+  m_Script: {fileID: 11500000, guid: FIND_MAINMENUMANAGER_GUID, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+"""
+    
+    # Encontrar o GUID do MainMenuManager.cs
+    script_meta = "Assets/Scripts/UI/MainMenuManager.cs.meta"
+    guid = "00000000000000000000000000000000"
+    
+    if os.path.exists(script_meta):
+        with open(script_meta, 'r') as f:
+            for line in f:
+                if line.startswith('guid:'):
+                    guid = line.split('guid:')[1].strip()
+                    break
+    
+    scene_content = scene_content.replace('FIND_MAINMENUMANAGER_GUID', guid)
+    
+    # Escrever a cena
+    scenes_dir = "Assets/Scenes"
+    os.makedirs(scenes_dir, exist_ok=True)
+    
+    scene_path = os.path.join(scenes_dir, "MainMenu.unity")
+    with open(scene_path, 'w', encoding='utf-8') as f:
+        f.write(scene_content)
+    
+    print("✅ MainMenu.unity criada com sucesso!")
+    print(f"   GUID do MainMenuManager: {guid}")
+    print("\n🎮 Agora:")
+    print("   1. Abra o Unity")
+    print("   2. A cena MainMenu já está pronta")
+    print("   3. O menu será criado AUTOMATICAMENTE quando rodar")
+    
+    return scene_path
+
+if __name__ == "__main__":
+    create_main_menu_scene()
