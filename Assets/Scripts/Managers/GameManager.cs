@@ -78,7 +78,10 @@ public class GameManager : MonoBehaviour
         currentArena = 1;
         continuesUsed = 0;
         SetState(GameState.Playing);
-        SceneManager.LoadScene("Arena1");
+        
+        // Por enquanto usa a cena Game, depois criar Arena1, Arena2, etc
+        Debug.Log("🎮 GameManager.StartGame() - Carregando cena Game...");
+        SceneManager.LoadScene("Game");
     }
 
     public void PauseGame()

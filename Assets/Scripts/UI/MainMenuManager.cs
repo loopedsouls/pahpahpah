@@ -172,7 +172,19 @@ public class MainMenuManager : MonoBehaviour
             case "Start":
                 btn.onClick.AddListener(() => {
                     Debug.Log("🎮 Botão JOGAR clicado!");
-                    SceneManager.LoadScene("Game");
+                    
+                    // Se existe GameManager, usa ele (mantém estado entre cenas)
+                    if (GameManager.Instance != null)
+                    {
+                        Debug.Log("✓ GameManager encontrado - usando StartGame()");
+                        GameManager.Instance.StartGame();
+                    }
+                    else
+                    {
+                        // Fallback: carrega direto
+                        Debug.LogWarning("⚠️ GameManager não encontrado - carregando cena direto");
+                        SceneManager.LoadScene("Game");
+                    }
                 });
                 break;
             case "Options":

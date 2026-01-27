@@ -1,0 +1,94 @@
+╔══════════════════════════════════════════════════════════════╗
+║                    🎮 LEIA PRIMEIRO                          ║
+║               Correção do Menu - PÁ PÁ PÁ                   ║
+╚══════════════════════════════════════════════════════════════╝
+
+🚨 A TELA ESTÁ AZUL? SIGA ESTES PASSOS:
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PASSO 1: Feche o Unity COMPLETAMENTE
+  • Feche todas as janelas do Unity
+  • Certifique-se que não há processo rodando
+
+PASSO 2: Reabra o projeto
+  • Use o Unity Hub
+  • Aguarde carregar completamente
+
+PASSO 3: Abra a cena MainMenu
+  • No Project, vá em Assets > Scenes
+  • Dê duplo clique em MainMenu.unity
+
+PASSO 4: Clique Play ▶️
+  • Botão Play no topo do Unity Editor
+
+PASSO 5: Veja o Console
+  • Menu: Window > General > Console
+  • Ou pressione Ctrl+Shift+C
+  • Deve ver logs com emojis (🚨, 🔨, ✅)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ O QUE VOCÊ DEVE VER:
+
+Na tela:
+  • Fundo MARROM ESCURO (não azul!)
+  • Título "PÁ PÁ PÁ" em AMARELO
+  • 3 botões: JOGAR, OPÇÕES, SAIR
+  • Botões mudam de cor ao passar o mouse
+
+No Console:
+  🚨🚨🚨 MainMenuManager.Awake() CHAMADO!
+  🔨 Criando menu PÁ PÁ PÁ...
+  ✅ MENU CRIADO COM SUCESSO!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❌ AINDA ESTÁ AZUL? EXECUTE:
+
+Opção A - Verificar tudo:
+  python3 tools/check_menu_setup.py
+
+Opção B - Recrear scene:
+  python3 tools/create_menu_scene.py
+
+Opção C - Limpar cache:
+  ./tools/clean_and_rebuild.sh
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📖 DOCUMENTAÇÃO COMPLETA:
+
+• MENU_FIX_README.md    - Guia detalhado com todas as infos
+• INSTRUCOES_MENU.txt   - Instruções de uso
+• CHANGELOG_MENU.md     - O que foi mudado
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔍 CHECKLIST DE VERIFICAÇÃO:
+
+□ Unity está fechado completamente?
+□ Reabriu o projeto?
+□ Abriu Assets/Scenes/MainMenu.unity?
+□ Clicou Play?
+□ Console está aberto (Ctrl+Shift+C)?
+□ Vê logs com emojis?
+□ Menu aparece na tela?
+
+Se marcou TODOS, o menu deve estar funcionando! ✅
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💡 DICA: Este menu usa a MESMA lógica do projeto Invisible
+         Scars que está 100% funcional! Tudo é criado em
+         runtime via código, não depende de prefabs.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📞 AINDA COM PROBLEMAS?
+
+Verifique se há ERROS no Console (texto vermelho).
+Se houver erros de compilação, o menu não vai aparecer.
+Resolva os erros primeiro!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

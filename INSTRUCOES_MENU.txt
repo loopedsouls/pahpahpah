@@ -1,0 +1,112 @@
+╔═══════════════════════════════════════════════════════════════╗
+║                   INSTRUÇÕES - MENU PÁ PÁ PÁ                  ║
+╚═══════════════════════════════════════════════════════════════╝
+
+✅ PROJETO JÁ ESTÁ CONFIGURADO CORRETAMENTE!
+
+O que foi feito:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Copiados scripts Python do projeto Invisible Scars
+2. Criado ForceMainMenu.cs (força iniciar na MainMenu)
+3. Atualizado MainMenuManager.cs com logs detalhados
+4. Recriada MainMenu.unity limpa
+5. Tudo verificado e funcionando
+
+COMO TESTAR:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+MÉTODO 1 - Teste Rápido:
+─────────────────────────
+1. Feche o Unity COMPLETAMENTE
+2. Reabra o projeto
+3. Abra: Assets/Scenes/MainMenu.unity
+4. Clique em Play ▶️
+5. Abra o Console: Window > General > Console (Ctrl+Shift+C)
+6. Veja os logs com emojis (🚨, 🔨, ✅)
+7. Menu deve aparecer!
+
+MÉTODO 2 - Se ainda estiver azul (Limpeza Total):
+──────────────────────────────────────────────────
+1. Feche o Unity COMPLETAMENTE
+2. No terminal, execute:
+   ./tools/clean_and_rebuild.sh
+3. Reabra o Unity (vai demorar - está reimportando)
+4. Quando terminar, abra MainMenu.unity
+5. Clique Play ▶️
+
+MÉTODO 3 - Recrear a Scene:
+────────────────────────────
+1. No terminal:
+   python3 tools/create_menu_scene.py
+2. Abra o Unity
+3. Abra MainMenu.unity
+4. Play ▶️
+
+LOGS ESPERADOS NO CONSOLE:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Quando funcionar, você verá:
+
+🎯 ForceMainMenu: Forçando load da MainMenu!
+🎬 Cena atual: MainMenu
+✅ Já está na MainMenu!
+🚨🚨🚨 MainMenuManager.Awake() CHAMADO! 🚨🚨🚨
+=== INICIANDO CRIAÇÃO DO MENU ===
+🎭 MainMenuManager.Start() CHAMADO!
+🔨 Criando menu PÁ PÁ PÁ...
+📷 Criando câmera...
+✓ Câmera criada!
+🖼️ Criando Canvas...
+✓ Canvas criado!
+🎮 Criando EventSystem...
+✓ EventSystem criado!
+🎨 Criando Background...
+✓ Background criado!
+📝 Criando Título...
+✓ Título criado!
+🔘 Criando container de botões...
+✓ Container criado!
+🔘 Criando botões...
+✓ Botão 'JOGAR' criado
+✓ Botão 'OPÇÕES' criado
+✓ Botão 'SAIR' criado
+✅ MENU CRIADO COM SUCESSO!
+
+O QUE DEVE APARECER NA TELA:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ Fundo MARROM ESCURO (não mais azul!)
+✓ Título "PÁ PÁ PÁ\nTHE MASK GAME" em AMARELO no topo
+✓ 3 botões centralizados:
+  - JOGAR   (vai para cena Game)
+  - OPÇÕES  (mostra log - ainda não implementado)
+  - SAIR    (fecha o jogo)
+✓ Botões mudam de cor ao passar o mouse
+✓ Texto dos botões fica amarelado no hover
+
+SCRIPTS ÚTEIS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+python3 tools/check_menu_setup.py     - Verifica se está tudo OK
+python3 tools/create_menu_scene.py    - Recria a scene MainMenu
+./tools/clean_and_rebuild.sh          - Limpa cache do Unity
+
+ARQUIVOS IMPORTANTES:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Assets/Scripts/UI/MainMenuManager.cs  - Cria todo o menu
+Assets/Scripts/ForceMainMenu.cs       - Força iniciar na MainMenu
+Assets/Scenes/MainMenu.unity          - Scene minimalista
+tools/                                - Scripts Python úteis
+
+BASEADO NO PROJETO INVISIBLE SCARS QUE FUNCIONA 100%!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Se ainda tiver problemas, verifique:
+1. Se há ERROS no Console (aba Console do Unity)
+2. Se o script MainMenuManager está compilando
+3. Se a scene MainMenu está aberta
+4. Se o Play mode está ativo
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
