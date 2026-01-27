@@ -25,6 +25,7 @@ public class AutoSetup
         
         SetupTags();
         SetupLayers();
+        SetupPhysics2DMatrix();
         SetupPrefabs();
         SetupScriptableObjects();
         ApplyRenpyTheme();
@@ -43,6 +44,53 @@ public class AutoSetup
     {
         // Layers já são criadas pelo TagManager.asset
         Debug.Log("✓ Layers configuradas: Player(8), Enemy(9), Projectile(10)");
+    }
+
+    static void SetupPhysics2DMatrix()
+    {
+        // Layer indices
+        int playerLayer = LayerMask.NameToLayer("Player");
+        int enemyLayer = LayerMask.NameToLayer("Enemy");
+        int projectileLayer = LayerMask.NameToLayer("Projectile");
+        int maskLayer = LayerMask.NameToLayer("Mask");
+        int arenaLayer = LayerMask.NameToLayer("Arena");
+
+        // Configure collision matrix
+        // Player collides with: Enemy, Mask, Arena
+        if (playerLayer >= 0 && enemyLayer >= 0)
+            Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, false);
+        if (playerLayer >= 0 && projectileLayer >= 0)
+            Physics2D.IgnoreLayerCollision(playerLayer, projectileLayer, true);
+        if (playerLayer >= 0 && maskLayer >= 0)
+            Physics2D.IgnoreLayerCollision(playerLayer, maskLayer, false);
+        if (playerLayer >= 0 && arenaLayer >= 0)
+            Physics2D.IgnoreLayerCollision(playerLayer, arenaLayer, false);
+
+        // Enemy collides with: Player, Projectile, Arena
+        if (enemyLayer >= 0 && projectileLayer >= 0)
+            Physics2D.IgnoreLayerCollision(enemyLayer, projectileLayer, false);
+        if (enemyLayer >= 0 && maskLayer >= 0)
+            Physics2D.IgnoreLayerCollision(enemyLayer, maskLayer, true);
+        if (enemyLayer >= 0 && arenaLayer >= 0)
+            Physics2D.IgnoreLayerCollision(enemyLayer, arenaLayer, false);
+        if (enemyLayer >= 0)
+            Physics2D.IgnoreLayerCollision(enemyLayer, enemyLayer, true);
+
+        // Projectile collides with: Enemy, Arena only
+        if (projectileLayer >= 0 && maskLayer >= 0)
+            Physics2D.IgnoreLayerCollision(projectileLayer, maskLayer, true);
+        if (projectileLayer >= 0 && arenaLayer >= 0)
+            Physics2D.IgnoreLayerCollision(projectileLayer, arenaLayer, false);
+        if (projectileLayer >= 0)
+            Physics2D.IgnoreLayerCollision(projectileLayer, projectileLayer, true);
+
+        // Mask doesn't collide with anything (trigger only)
+        if (maskLayer >= 0 && arenaLayer >= 0)
+            Physics2D.IgnoreLayerCollision(maskLayer, arenaLayer, true);
+        if (maskLayer >= 0)
+            Physics2D.IgnoreLayerCollision(maskLayer, maskLayer, true);
+
+        Debug.Log("✓ Physics2D collision matrix configured");
     }
 
     static void SetupPrefabs()
