@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!isDashing)
         {
-            rb.linearVelocity = moveInput * moveSpeed;
+            rb.velocity = moveInput * moveSpeed;
         }
     }
 
@@ -99,14 +99,14 @@ public class PlayerController : MonoBehaviour
         canDash = false;
 
         Vector2 dashDirection = moveInput != Vector2.zero ? moveInput : aimDirection;
-        rb.linearVelocity = dashDirection * dashSpeed;
+        rb.velocity = dashDirection * dashSpeed;
 
         OnDashStarted?.Invoke();
 
         yield return new WaitForSeconds(dashDuration);
 
         isDashing = false;
-        rb.linearVelocity = Vector2.zero;
+        rb.velocity = Vector2.zero;
 
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;

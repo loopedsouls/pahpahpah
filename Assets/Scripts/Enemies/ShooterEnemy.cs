@@ -18,15 +18,15 @@ public class ShooterEnemy : EnemyBase
         // Maintain preferred distance
         if (distance < preferredDistance - 1f)
         {
-            rb.linearVelocity = -direction * moveSpeed;
+            rb.velocity = -direction * moveSpeed;
         }
         else if (distance > preferredDistance + 1f)
         {
-            rb.linearVelocity = direction * moveSpeed;
+            rb.velocity = direction * moveSpeed;
         }
         else
         {
-            rb.linearVelocity = Vector2.zero;
+            rb.velocity = Vector2.zero;
         }
 
         // Face player

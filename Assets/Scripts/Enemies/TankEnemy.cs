@@ -17,7 +17,7 @@ public class TankEnemy : EnemyBase
     protected override void UpdateBehavior()
     {
         Vector2 direction = GetDirectionToPlayer();
-        rb.linearVelocity = direction * moveSpeed;
+        rb.velocity = direction * moveSpeed;
 
         if (direction.x != 0)
         {

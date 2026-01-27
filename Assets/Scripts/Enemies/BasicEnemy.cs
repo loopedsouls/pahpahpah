@@ -5,7 +5,7 @@ public class BasicEnemy : EnemyBase
     protected override void UpdateBehavior()
     {
         Vector2 direction = GetDirectionToPlayer();
-        rb.linearVelocity = direction * moveSpeed;
+        rb.velocity = direction * moveSpeed;
 
         // Face player
         if (direction.x != 0)

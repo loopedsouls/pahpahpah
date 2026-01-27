@@ -34,7 +34,7 @@ public class PieProjectile : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.linearVelocity = direction * speed;
+        rb.velocity = direction * speed;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

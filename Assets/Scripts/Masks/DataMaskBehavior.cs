@@ -69,7 +69,7 @@ public class ConfusionEffect : MonoBehaviour
 
         if (rb != null)
         {
-            rb.linearVelocity = randomDirection * 2f;
+            rb.velocity = randomDirection * 2f;
         }
     }
 }
