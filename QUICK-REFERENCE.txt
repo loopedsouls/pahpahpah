@@ -1,0 +1,127 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║           🎭 PÁ PÁ PÁ: THE MASK GAME - QUICK REFERENCE CARD              ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ 🎮 CONTROLS                                                               ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+  Movement         WASD or Arrow Keys
+  Aim              Mouse Movement
+  Shoot            Left Mouse Click
+  Dash             Space or Shift
+  Mask 1           1 (Bitmask - Multi-shot)
+  Mask 2           2 (Alpha Mask - Ghost Dash)
+  Mask 3           3 (Data Mask - Confuse)
+  Mask 4           4 (Surgical Mask - Healing)
+  Mask 5           5 (Shader Mask - Slow-Mo)
+  Pause            ESC
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ 🎭 MASK POWERS                                                            ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+  [1] 🟢 BITMASK
+      Effect:     Shoots 5 pies in a cone
+      Cooldown:   3 seconds
+      Use:        Clear crowds, maximize hits
+      
+  [2] 🔵 ALPHA MASK
+      Effect:     Dash forward + 0.5s invincibility
+      Cooldown:   4 seconds
+      Use:        Escape danger, dodge through enemies
+      
+  [3] 🟠 DATA MASK
+      Effect:     Confuse ALL enemies for 5 seconds
+      Cooldown:   6 seconds
+      Use:        Crowd control, buy time
+      
+  [4] ⚪ SURGICAL MASK (Passive)
+      Effect:     Heal +1 HP every 5 hits
+      Cooldown:   None (always active)
+      Use:        Sustain, aggressive playstyle
+      
+  [5] 🟣 SHADER MASK
+      Effect:     Slow-motion for 3 seconds
+      Cooldown:   5 seconds
+      Use:        Precision aiming, dodge bullets
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ 👾 ENEMIES                                                                ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+  BASIC          1 HP, fast, chases you
+  SHOOTER        1 HP, medium speed, shoots from distance
+  TANK           3 HP, slow, high damage on contact
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ 📊 SCORING & COMBOS                                                       ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+  Hit Enemy                 +5 audience
+  Kill Enemy                +8 audience + 100 score
+  3+ Combo                  +10 audience bonus
+  5+ Combo                  +15 audience bonus
+  Mask Collection           +10 audience
+  Miss Shot                 -2 audience
+  Take Damage               -5 audience
+  Complete Wave             +15 audience
+  
+  Combo Multiplier          Score × (Combo / 2)
+  Combo Reset               After 3 seconds without hit
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ 🎯 STRATEGY TIPS                                                          ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+  • Keep moving to avoid enemy shots
+  • Build combos for higher scores and audience
+  • Use Bitmask (1) on crowds for maximum hits
+  • Save Alpha Mask (2) for emergencies
+  • Data Mask (3) is great when overwhelmed
+  • Equip Surgical Mask (4) early for sustain
+  • Use Shader Mask (5) against Shooters
+  • Watch the timer - 2 minutes per wave!
+  • Collect masks every 3 kills
+  • Don't let audience hit 0%!
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ ⚡ GAME MECHANICS                                                         ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+  Player HP              5 hearts
+  Waves                  4 total
+  Arena Time             2 minutes per wave
+  Audience Range         0-100%
+  Mask Drop Rate         Every 3 kills
+  Regular Dash           80 pixels, 3s cooldown
+  
+  Game Over Conditions:
+    • HP reaches 0
+    • Audience reaches 0%
+    • Time runs out (2 min)
+  
+  Victory Condition:
+    • Complete all 4 waves
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ 🚀 QUICK START                                                            ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+  Terminal:              ./start.sh
+  Or:                    python3 -m http.server 8080
+  Browser:               http://localhost:8080
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ 📚 DOCUMENTATION                                                          ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+  MASK-POWERS-IMPLEMENTED.md     Detailed mask guide
+  TODO-NEXT.md                   Remaining features
+  IMPLEMENTATION-SUMMARY.md      Complete overview
+  FEATURES-CHECKLIST.md          Full checklist
+  QUICKSTART.md                  Basic guide
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║                    🎭 GOOD LUCK AND HAVE FUN! 🎭                          ║
+╚════════════════════════════════════════════════════════════════════════════╝

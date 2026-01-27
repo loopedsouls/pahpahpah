@@ -150,3 +150,114 @@
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 🎉 DIVIRTA-SE! 🎭
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🆕 ATUALIZAÇÃO: PODERES DAS MÁSCARAS - IMPLEMENTADO COMPLETO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎭 PARTE 4: SISTEMA DE PODERES (CRÍTICO)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ✅ BITMASK (Tecla 1):
+      • Multi-alvo: 5 tortas em leque
+      • Cooldown: 3 segundos
+      • Visual: Cone de 30 graus
+   
+   ✅ ALPHA MASK (Tecla 2):
+      • Dash fantasma: 100px
+      • Invencibilidade: 0.5s
+      • Cooldown: 4 segundos
+      • Visual: Flash + rastro azul
+   
+   ✅ DATA MASK (Tecla 3):
+      • Confusão em área total
+      • Duração: 5 segundos
+      • Cooldown: 6 segundos
+      • Visual: "?" amarelo nos inimigos
+   
+   ✅ SURGICAL MASK (Tecla 4):
+      • PASSIVA: +1 HP a cada 5 acertos
+      • Sem cooldown
+      • Visual: Indicador "P", partículas verdes
+   
+   ✅ SHADER MASK (Tecla 5):
+      • Slow-motion: 50% velocidade inimigos
+      • Duração: 3 segundos
+      • Cooldown: 5 segundos
+      • Visual: Anel roxo no jogador
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎮 PARTE 5: SISTEMAS AVANÇADOS DE JOGO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ✅ Sistema de Combo:
+      • Rastreamento de acertos consecutivos
+      • Reset após 3s sem acerto
+      • Bônus: 3+ combo (+10), 5+ combo (+15)
+      • Multiplicador de pontos
+      • Visual: Display de combo no HUD
+   
+   ✅ Timer de Arena:
+      • 2 minutos por wave
+      • Game over se tempo acabar
+      • Display: "TEMPO: 2:00"
+      • Contagem regressiva visual
+   
+   ✅ Sistema de Cooldown Visual:
+      • Barra vermelha ascendente
+      • Opacidade 50% quando em cooldown
+      • Indicador "P" para passivas
+      • Borda azul para máscara ativa
+   
+   ✅ Efeitos Visuais Aprimorados:
+      • Flash de invencibilidade
+      • Anel de slow-motion
+      • Rastro de dash
+      • Indicador de confusão
+      • Partículas de cura
+      • Filtro de cor em inimigos confusos
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 ESTATÍSTICAS ATUALIZADAS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   • Linhas de JS:        ~1050 (+400)
+   • Linhas de CSS:       ~290 (+40)
+   • Poderes Ativos:      5 (100%)
+   • Sistemas Passivos:   1 (Surgical)
+   • Cooldowns:           4 máscaras
+   • Mecânicas Novas:     6
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 CONTROLES COMPLETOS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   1-5            → Ativar/Equipar máscaras
+   WASD/Setas     → Mover
+   Mouse          → Mirar
+   Click Esquerdo → Atirar
+   Espaço/Shift   → Dash normal
+   ESC            → Pausar
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔥 PRÓXIMAS IMPLEMENTAÇÕES (GDD):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ⏳ Boss Final (Arena 4)
+   ⏳ Arenas Específicas (obstáculos, tilesets)
+   ⏳ Sistema de Áudio (música + SFX)
+   ⏳ Assets Visuais Reais (sprites animados)
+   ⏳ UI/UX Polimento (menus com arte)
+   ⏳ Sistema de Continue (máx 2)
+   ⏳ Obstáculos interativos
+   ⏳ Balanceamento final
+   ⏳ Build PWA otimizado
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✨ STATUS ATUAL: CORE GAMEPLAY + PODERES 100% FUNCIONAL!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Data: 2026-01-27
+Versão: MVP + Mask Powers v1.0
+
