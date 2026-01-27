@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <filter id="shBossGlow"><feGaussianBlur stdDeviation="3"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <linearGradient id="shBossBody" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffcc00"/>
+      <stop offset="100%" style="stop-color:#664400"/>
+    </linearGradient>
+    <linearGradient id="shBossRainbow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff0000"/>
+      <stop offset="25%" style="stop-color:#ffaa00"/>
+      <stop offset="50%" style="stop-color:#00ff00"/>
+      <stop offset="75%" style="stop-color:#00ffff"/>
+      <stop offset="100%" style="stop-color:#ff00ff"/>
+    </linearGradient>
+  </defs>
+  <!-- Corpo do mestre do tempo -->
+  <g filter="url(#shBossGlow)">
+    <!-- Manto/corpo -->
+    <path d="M 64,25 L 95,45 L 100,100 L 64,115 L 28,100 L 33,45 Z" fill="url(#shBossBody)" opacity="0.9"/>
+    <!-- Capuz -->
+    <path d="M 64,15 Q 95,15 95,45 L 64,55 L 33,45 Q 33,15 64,15" fill="#553300"/>
+    <!-- Face (relógio) -->
+    <circle cx="64" cy="50" r="22" fill="#221100" stroke="#ffaa00" stroke-width="2"/>
+    <!-- Marcadores do relógio -->
+    <g stroke="#ffaa00" stroke-width="2">
+      <line x1="64" y1="32" x2="64" y2="38"/>
+      <line x1="64" y1="62" x2="64" y2="68"/>
+      <line x1="46" y1="50" x2="52" y2="50"/>
+      <line x1="76" y1="50" x2="82" y2="50"/>
+    </g>
+    <!-- Ponteiros (olhos) -->
+    <line x1="64" y1="50" x2="64" y2="38" stroke="#ffaa00" stroke-width="3"/>
+    <line x1="64" y1="50" x2="74" y2="50" stroke="#ffaa00" stroke-width="2"/>
+    <circle cx="64" cy="50" r="4" fill="#ffaa00"/>
+    <!-- Símbolo infinito no peito -->
+    <path d="M 50,80 Q 40,70 50,70 Q 60,70 64,80 Q 68,70 78,70 Q 88,70 78,80 Q 68,90 64,80 Q 60,90 50,80" 
+          stroke="#ffaa00" stroke-width="3" fill="none"/>
+    <!-- Braços com ampulhetas -->
+    <rect x="18" y="55" width="15" height="40" fill="url(#shBossBody)" rx="5"/>
+    <rect x="95" y="55" width="15" height="40" fill="url(#shBossBody)" rx="5"/>
+    <!-- Ampulhetas nas mãos -->
+    <g fill="#ffaa00" opacity="0.8">
+      <path d="M 20,100 L 30,100 L 27,108 L 30,116 L 20,116 L 23,108 Z"/>
+      <path d="M 98,100 L 108,100 L 105,108 L 108,116 L 98,116 L 101,108 Z"/>
+    </g>
+  </g>
+  <!-- Aura cromática -->
+  <circle cx="64" cy="65" r="55" fill="none" stroke="url(#shBossRainbow)" stroke-width="3" opacity="0.4"/>
+  <circle cx="64" cy="65" r="60" fill="none" stroke="url(#shBossRainbow)" stroke-width="2" opacity="0.2"/>
+  <!-- Partículas de tempo -->
+  <g fill="#ffaa00" opacity="0.5" font-family="serif" font-size="12">
+    <text x="10" y="30">∞</text>
+    <text x="105" y="30">∞</text>
+    <text x="5" y="110">⧖</text>
+    <text x="115" y="110">⧗</text>
+  </g>
+</svg>

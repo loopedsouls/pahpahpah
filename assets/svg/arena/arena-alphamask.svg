@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="amFloor" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" style="stop-color:#1a1a2a"/>
+      <stop offset="60%" style="stop-color:#0f0f1a"/>
+      <stop offset="100%" style="stop-color:#050510"/>
+    </radialGradient>
+    <radialGradient id="amGlow" cx="50%" cy="50%" r="40%">
+      <stop offset="0%" style="stop-color:#00ffff;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#00ffff;stop-opacity:0"/>
+    </radialGradient>
+    <linearGradient id="amFade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#00ffff;stop-opacity:0"/>
+      <stop offset="50%" style="stop-color:#00ffff;stop-opacity:0.5"/>
+      <stop offset="100%" style="stop-color:#00ffff;stop-opacity:0"/>
+    </linearGradient>
+    <filter id="amGhost"><feGaussianBlur stdDeviation="8"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="amNeon"><feGaussianBlur stdDeviation="3"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#amFloor)"/>
+  <!-- Ondas fantasma -->
+  <g opacity="0.15" filter="url(#amGhost)">
+    <ellipse cx="960" cy="540" rx="800" ry="450" fill="none" stroke="#00ffff" stroke-width="2"/>
+    <ellipse cx="960" cy="540" rx="600" ry="350" fill="none" stroke="#00ffff" stroke-width="2"/>
+    <ellipse cx="960" cy="540" rx="400" ry="250" fill="none" stroke="#00ffff" stroke-width="2"/>
+  </g>
+  <!-- Trilhas de dash -->
+  <g stroke="url(#amFade)" stroke-width="4" opacity="0.3">
+    <line x1="200" y1="300" x2="600" y2="300"/>
+    <line x1="1320" y1="300" x2="1720" y2="300"/>
+    <line x1="200" y1="780" x2="600" y2="780"/>
+    <line x1="1320" y1="780" x2="1720" y2="780"/>
+  </g>
+  <!-- Espelhos/portais -->
+  <g opacity="0.4" filter="url(#amNeon)">
+    <ellipse cx="200" cy="540" rx="30" ry="150" fill="none" stroke="#00ffff" stroke-width="3"/>
+    <ellipse cx="1720" cy="540" rx="30" ry="150" fill="none" stroke="#00ffff" stroke-width="3"/>
+  </g>
+  <!-- Centro etéreo -->
+  <circle cx="960" cy="540" r="200" fill="none" stroke="#00ffff" stroke-width="2" opacity="0.4" filter="url(#amNeon)"/>
+  <circle cx="960" cy="540" r="150" fill="none" stroke="#00ffff" stroke-width="1" opacity="0.3" stroke-dasharray="20,10"/>
+  <circle cx="960" cy="540" r="100" fill="none" stroke="#00ffff" stroke-width="1" opacity="0.2" stroke-dasharray="10,5"/>
+  <ellipse cx="960" cy="540" rx="250" ry="180" fill="url(#amGlow)"/>
+  <!-- Silhuetas fantasma -->
+  <g opacity="0.1" filter="url(#amGhost)">
+    <circle cx="400" cy="400" r="40" fill="#00ffff"/>
+    <circle cx="1520" cy="400" r="40" fill="#00ffff"/>
+    <circle cx="400" cy="680" r="40" fill="#00ffff"/>
+    <circle cx="1520" cy="680" r="40" fill="#00ffff"/>
+  </g>
+  <!-- Cantos -->
+  <g stroke="#00ffff" fill="none" opacity="0.5" stroke-width="2" filter="url(#amNeon)">
+    <path d="M 60,60 L 180,60 L 180,70 M 60,60 L 60,180 L 70,180"/>
+    <path d="M 1860,60 L 1740,60 L 1740,70 M 1860,60 L 1860,180 L 1850,180"/>
+    <path d="M 60,1020 L 180,1020 L 180,1010 M 60,1020 L 60,900 L 70,900"/>
+    <path d="M 1860,1020 L 1740,1020 L 1740,1010 M 1860,1020 L 1860,900 L 1850,900"/>
+  </g>
+  <text x="960" y="100" font-family="monospace" font-size="24" fill="#00ffff" text-anchor="middle" opacity="0.5">ARENA 02: PHANTOM REALM</text>
+</svg>

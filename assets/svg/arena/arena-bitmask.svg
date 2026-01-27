@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="bmFloor" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" style="stop-color:#1a2a1a"/>
+      <stop offset="60%" style="stop-color:#0f1a0f"/>
+      <stop offset="100%" style="stop-color:#050a05"/>
+    </radialGradient>
+    <radialGradient id="bmGlow" cx="50%" cy="50%" r="40%">
+      <stop offset="0%" style="stop-color:#00ff00;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#00ff00;stop-opacity:0"/>
+    </radialGradient>
+    <pattern id="bmBinary" x="0" y="0" width="80" height="40" patternUnits="userSpaceOnUse">
+      <text x="0" y="12" font-family="monospace" font-size="10" fill="#00ff00" opacity="0.15">01001101</text>
+      <text x="40" y="28" font-family="monospace" font-size="10" fill="#00ff00" opacity="0.1">10110010</text>
+    </pattern>
+    <filter id="bmNeon"><feGaussianBlur stdDeviation="3"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#bmFloor)"/>
+  <rect width="1920" height="1080" fill="url(#bmBinary)"/>
+  <!-- Grid digital -->
+  <g stroke="#00ff00" opacity="0.2">
+    <line x1="0" y1="270" x2="1920" y2="270" stroke-width="1"/>
+    <line x1="0" y1="540" x2="1920" y2="540" stroke-width="2"/>
+    <line x1="0" y1="810" x2="1920" y2="810" stroke-width="1"/>
+    <line x1="480" y1="0" x2="480" y2="1080" stroke-width="1"/>
+    <line x1="960" y1="0" x2="960" y2="1080" stroke-width="2"/>
+    <line x1="1440" y1="0" x2="1440" y2="1080" stroke-width="1"/>
+  </g>
+  <!-- Circuitos -->
+  <g stroke="#00ff00" fill="none" opacity="0.3" stroke-width="2">
+    <path d="M 100,200 L 300,200 L 300,400 L 500,400"/>
+    <path d="M 1420,200 L 1620,200 L 1620,400 L 1820,400"/>
+    <path d="M 100,880 L 300,880 L 300,680 L 500,680"/>
+    <path d="M 1420,880 L 1620,880 L 1620,680 L 1820,680"/>
+    <circle cx="300" cy="200" r="8"/><circle cx="300" cy="400" r="8"/>
+    <circle cx="1620" cy="200" r="8"/><circle cx="1620" cy="400" r="8"/>
+    <circle cx="300" cy="880" r="8"/><circle cx="300" cy="680" r="8"/>
+    <circle cx="1620" cy="880" r="8"/><circle cx="1620" cy="680" r="8"/>
+  </g>
+  <!-- Centro hexagonal -->
+  <polygon points="960,340 1150,440 1150,640 960,740 770,640 770,440" fill="none" stroke="#00ff00" stroke-width="3" opacity="0.4" filter="url(#bmNeon)"/>
+  <polygon points="960,400 1090,470 1090,610 960,680 830,610 830,470" fill="none" stroke="#00ff00" stroke-width="2" opacity="0.3"/>
+  <ellipse cx="960" cy="540" rx="300" ry="200" fill="url(#bmGlow)"/>
+  <!-- Indicadores de canto -->
+  <g fill="#00ff00" opacity="0.6" filter="url(#bmNeon)">
+    <rect x="60" y="60" width="120" height="8"/><rect x="60" y="60" width="8" height="120"/>
+    <rect x="1740" y="60" width="120" height="8"/><rect x="1852" y="60" width="8" height="120"/>
+    <rect x="60" y="1012" width="120" height="8"/><rect x="60" y="900" width="8" height="120"/>
+    <rect x="1740" y="1012" width="120" height="8"/><rect x="1852" y="900" width="8" height="120"/>
+  </g>
+  <text x="960" y="100" font-family="monospace" font-size="24" fill="#00ff00" text-anchor="middle" opacity="0.5">ARENA 01: BITMASK DOMAIN</text>
+</svg>

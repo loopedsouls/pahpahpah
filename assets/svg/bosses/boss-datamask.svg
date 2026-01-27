@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <filter id="dmBossGlitch">
+      <feGaussianBlur stdDeviation="1"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <linearGradient id="dmBossBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff00ff"/>
+      <stop offset="50%" style="stop-color:#660066"/>
+      <stop offset="100%" style="stop-color:#ff00ff"/>
+    </linearGradient>
+  </defs>
+  <!-- Corpo caótico -->
+  <g filter="url(#dmBossGlitch)">
+    <!-- Forma principal distorcida -->
+    <path d="M 64,20 L 95,35 L 105,64 L 95,93 L 64,108 L 33,93 L 23,64 L 33,35 Z" 
+          fill="url(#dmBossBody)" opacity="0.9"/>
+    <!-- Camada glitchada -->
+    <path d="M 66,22 L 97,37 L 107,66 L 97,95 L 66,110 L 35,95 L 25,66 L 35,37 Z" 
+          fill="#ff00ff" opacity="0.2" transform="translate(-4,0)"/>
+    <!-- Olhos espiralados -->
+    <g stroke="#ff00ff" fill="none" stroke-width="2">
+      <circle cx="48" cy="55" r="12" fill="#220022"/>
+      <path d="M 48,55 Q 55,48 55,55 Q 55,62 48,62 Q 41,62 41,55 Q 41,50 48,50"/>
+      <circle cx="80" cy="55" r="12" fill="#220022"/>
+      <path d="M 80,55 Q 87,48 87,55 Q 87,62 80,62 Q 73,62 73,55 Q 73,50 80,50"/>
+    </g>
+    <!-- Boca maluca -->
+    <path d="M 45,78 Q 55,90 64,78 Q 73,90 83,78" stroke="#ff00ff" stroke-width="3" fill="none"/>
+    <!-- Símbolos de confusão -->
+    <g fill="#ff00ff" font-family="serif" font-size="16">
+      <text x="25" y="35">?</text>
+      <text x="95" y="35">¿</text>
+      <text x="20" y="100">‽</text>
+      <text x="100" y="100">?</text>
+    </g>
+    <!-- Tentáculos caóticos -->
+    <g stroke="#ff00ff" stroke-width="4" fill="none" opacity="0.7">
+      <path d="M 33,64 Q 10,50 15,30"/>
+      <path d="M 95,64 Q 118,50 113,30"/>
+      <path d="M 40,93 Q 25,115 10,110"/>
+      <path d="M 88,93 Q 103,115 118,110"/>
+    </g>
+  </g>
+  <!-- Partículas de glitch -->
+  <g fill="#ff00ff" opacity="0.6">
+    <rect x="12" y="45" width="6" height="3"/>
+    <rect x="110" y="55" width="6" height="3"/>
+    <rect x="8" y="85" width="4" height="6"/>
+    <rect x="116" y="75" width="4" height="6"/>
+  </g>
+</svg>

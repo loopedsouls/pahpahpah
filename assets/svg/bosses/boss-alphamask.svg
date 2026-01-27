@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <filter id="amBossGhost">
+      <feGaussianBlur stdDeviation="3"/>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <radialGradient id="amBossBody" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#88ffff"/>
+      <stop offset="100%" style="stop-color:#004466"/>
+    </radialGradient>
+    <linearGradient id="amBossFade" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00ffff;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#00ffff;stop-opacity:0"/>
+    </linearGradient>
+  </defs>
+  <!-- Corpo fantasmagórico -->
+  <g filter="url(#amBossGhost)">
+    <!-- Forma principal -->
+    <path d="M 64,15 Q 100,15 100,55 L 100,85 Q 100,95 90,95 L 85,95 L 80,110 L 70,95 L 58,95 L 48,110 L 43,95 L 38,95 Q 28,95 28,85 L 28,55 Q 28,15 64,15" 
+          fill="url(#amBossBody)" opacity="0.9"/>
+    <!-- Capuz/manto -->
+    <path d="M 64,10 Q 105,10 105,55 L 105,60 Q 105,65 100,65 L 28,65 Q 23,65 23,60 L 23,55 Q 23,10 64,10" 
+          fill="#006688" opacity="0.5"/>
+    <!-- Olhos vazios -->
+    <ellipse cx="48" cy="50" rx="10" ry="12" fill="#001122"/>
+    <ellipse cx="80" cy="50" rx="10" ry="12" fill="#001122"/>
+    <!-- Brilho nos olhos -->
+    <circle cx="45" cy="47" r="3" fill="#00ffff"/>
+    <circle cx="77" cy="47" r="3" fill="#00ffff"/>
+    <!-- Boca espectral -->
+    <ellipse cx="64" cy="75" rx="12" ry="6" fill="#001122"/>
+  </g>
+  <!-- Rastro fantasma -->
+  <g opacity="0.3">
+    <path d="M 64,95 Q 64,115 50,120" stroke="url(#amBossFade)" stroke-width="8" fill="none"/>
+    <path d="M 64,95 Q 64,115 78,120" stroke="url(#amBossFade)" stroke-width="8" fill="none"/>
+  </g>
+  <!-- Partículas etéreas -->
+  <g fill="#00ffff" opacity="0.5">
+    <circle cx="20" cy="30" r="3"/>
+    <circle cx="108" cy="40" r="2"/>
+    <circle cx="15" cy="70" r="2"/>
+    <circle cx="113" cy="80" r="3"/>
+  </g>
+</svg>

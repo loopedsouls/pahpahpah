@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="sgFloor" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" style="stop-color:#1a2a2a"/>
+      <stop offset="60%" style="stop-color:#0f1a1a"/>
+      <stop offset="100%" style="stop-color:#051010"/>
+    </radialGradient>
+    <radialGradient id="sgGlow" cx="50%" cy="50%" r="40%">
+      <stop offset="0%" style="stop-color:#00ff88;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#00ff88;stop-opacity:0"/>
+    </radialGradient>
+    <filter id="sgNeon"><feGaussianBlur stdDeviation="3"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <pattern id="sgTiles" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+      <rect width="100" height="100" fill="none" stroke="#00ff88" stroke-width="0.5" opacity="0.15"/>
+      <rect x="25" y="25" width="50" height="50" fill="none" stroke="#00ff88" stroke-width="0.3" opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#sgFloor)"/>
+  <rect width="1920" height="1080" fill="url(#sgTiles)"/>
+  <!-- Cruz médica central -->
+  <g filter="url(#sgNeon)" opacity="0.4">
+    <rect x="910" y="340" width="100" height="400" fill="none" stroke="#00ff88" stroke-width="4"/>
+    <rect x="760" y="490" width="400" height="100" fill="none" stroke="#00ff88" stroke-width="4"/>
+  </g>
+  <g opacity="0.2">
+    <rect x="920" y="360" width="80" height="360" fill="#00ff88"/>
+    <rect x="780" y="500" width="360" height="80" fill="#00ff88"/>
+  </g>
+  <!-- Círculo de cura -->
+  <circle cx="960" cy="540" r="250" fill="none" stroke="#00ff88" stroke-width="3" opacity="0.3" filter="url(#sgNeon)"/>
+  <circle cx="960" cy="540" r="200" fill="none" stroke="#00ff88" stroke-width="2" opacity="0.2" stroke-dasharray="30,15"/>
+  <ellipse cx="960" cy="540" rx="300" ry="220" fill="url(#sgGlow)"/>
+  <!-- Monitores de vida nos cantos -->
+  <g stroke="#00ff88" fill="none" stroke-width="2" opacity="0.5">
+    <!-- ECG superior esquerdo -->
+    <polyline points="80,150 120,150 130,100 140,200 150,150 250,150" filter="url(#sgNeon)"/>
+    <rect x="60" y="80" width="220" height="150" stroke-width="1" opacity="0.3"/>
+    <!-- ECG superior direito -->
+    <polyline points="1670,150 1710,150 1720,100 1730,200 1740,150 1840,150" filter="url(#sgNeon)"/>
+    <rect x="1640" y="80" width="220" height="150" stroke-width="1" opacity="0.3"/>
+    <!-- ECG inferior esquerdo -->
+    <polyline points="80,930 120,930 130,880 140,980 150,930 250,930" filter="url(#sgNeon)"/>
+    <rect x="60" y="850" width="220" height="150" stroke-width="1" opacity="0.3"/>
+    <!-- ECG inferior direito -->
+    <polyline points="1670,930 1710,930 1720,880 1730,980 1740,930 1840,930" filter="url(#sgNeon)"/>
+    <rect x="1640" y="850" width="220" height="150" stroke-width="1" opacity="0.3"/>
+  </g>
+  <!-- Símbolos de saúde -->
+  <g fill="#00ff88" opacity="0.15">
+    <path d="M 400,300 L 420,300 L 420,280 L 440,280 L 440,300 L 460,300 L 460,320 L 440,320 L 440,340 L 420,340 L 420,320 L 400,320 Z"/>
+    <path d="M 1460,300 L 1480,300 L 1480,280 L 1500,280 L 1500,300 L 1520,300 L 1520,320 L 1500,320 L 1500,340 L 1480,340 L 1480,320 L 1460,320 Z"/>
+    <path d="M 400,740 L 420,740 L 420,720 L 440,720 L 440,740 L 460,740 L 460,760 L 440,760 L 440,780 L 420,780 L 420,760 L 400,760 Z"/>
+    <path d="M 1460,740 L 1480,740 L 1480,720 L 1500,720 L 1500,740 L 1520,740 L 1520,760 L 1500,760 L 1500,780 L 1480,780 L 1480,760 L 1460,760 Z"/>
+  </g>
+  <!-- Bordas -->
+  <g stroke="#00ff88" fill="none" stroke-width="2" opacity="0.4">
+    <path d="M 60,60 L 200,60 M 60,60 L 60,200"/>
+    <path d="M 1860,60 L 1720,60 M 1860,60 L 1860,200"/>
+    <path d="M 60,1020 L 200,1020 M 60,1020 L 60,880"/>
+    <path d="M 1860,1020 L 1720,1020 M 1860,1020 L 1860,880"/>
+  </g>
+  <text x="960" y="100" font-family="monospace" font-size="24" fill="#00ff88" text-anchor="middle" opacity="0.5">ARENA 04: HEALING SANCTUM</text>
+</svg>
