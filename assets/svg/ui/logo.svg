@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Logo do jogo para o menu -->
+  <defs>
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#ff6600;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff2060;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Torta grande stylizada -->
+  <ellipse cx="32" cy="40" rx="26" ry="6" fill="#e0e0e0"/>
+  <ellipse cx="32" cy="36" rx="24" ry="8" fill="#fff8dc"/>
+  <ellipse cx="32" cy="32" rx="22" ry="7" fill="#ffe4b5"/>
+  
+  <!-- Chantilly -->
+  <circle cx="32" cy="26" r="10" fill="#ffffff"/>
+  <circle cx="26" cy="28" r="7" fill="#ffffff" opacity="0.8"/>
+  <circle cx="38" cy="28" r="7" fill="#ffffff" opacity="0.8"/>
+  
+  <!-- Máscara no topo -->
+  <ellipse cx="32" cy="20" rx="12" ry="10" fill="url(#logoGrad)" opacity="0.9"/>
+  <ellipse cx="32" cy="20" rx="10" ry="8" fill="none" stroke="#ffffff" stroke-width="2"/>
+  
+  <!-- Olhos da máscara -->
+  <ellipse cx="28" cy="19" rx="2" ry="2.5" fill="#000000"/>
+  <ellipse cx="36" cy="19" rx="2" ry="2.5" fill="#000000"/>
+  
+  <!-- Brilho -->
+  <circle cx="26" cy="17" r="1.5" fill="#ffffff" opacity="0.6"/>
+</svg>

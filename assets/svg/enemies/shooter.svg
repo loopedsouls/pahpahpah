@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Inimigo Atirador - Com chapéu de chef -->
+  
+  <!-- Corpo -->
+  <ellipse cx="16" cy="19" rx="6" ry="8" fill="#ff8040"/>
+  <ellipse cx="16" cy="19" rx="4.5" ry="6" fill="#ffa060"/>
+  
+  <!-- Cabeça -->
+  <circle cx="16" cy="12" r="5" fill="#ffb399"/>
+  
+  <!-- Chapéu de chef -->
+  <ellipse cx="16" cy="8" rx="6" ry="3" fill="#ffffff"/>
+  <rect x="12" y="8" width="8" height="3" fill="#ffffff"/>
+  <ellipse cx="16" cy="5" rx="5" ry="2.5" fill="#ffffff"/>
+  
+  <!-- Olhos (concentrados) -->
+  <circle cx="13" cy="12" r="1.2" fill="#000000"/>
+  <circle cx="19" cy="12" r="1.2" fill="#000000"/>
+  
+  <!-- Boca -->
+  <line x1="14" y1="15" x2="18" y2="15" stroke="#000000" stroke-width="1"/>
+  
+  <!-- Braços com torta -->
+  <ellipse cx="10" cy="19" rx="2.5" ry="4" fill="#ffb399"/>
+  <ellipse cx="22" cy="19" rx="2.5" ry="4" fill="#ffb399"/>
+  
+  <!-- Torta na mão -->
+  <circle cx="8" cy="18" r="3" fill="#fffacd"/>
+  <circle cx="8" cy="17" r="1.5" fill="#ffffff"/>
+  
+  <!-- Avental -->
+  <rect x="13" y="23" width="6" height="5" rx="1" fill="#ffffff" opacity="0.9"/>
+  
+  <!-- Indicador de atirador -->
+  <circle cx="16" cy="6" r="2" fill="#ff8800" opacity="0.7"/>
+</svg>

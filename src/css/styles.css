@@ -1,19 +1,232 @@
-/* Basic styles for the game */
-body {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #000;
+:root {
+  --primary-yellow: #ffd700;
+  --primary-blue: #00d4ff;
+  --primary-red: #ff2060;
+  --bg-dark: #1a1a1a;
+  --text-light: #ffffff;
+  --ui-border: #4a4a4a;
 }
 
-#game-container {
-  width: 100vw;
-  height: 100vh;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier New', monospace;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
+}
+
+#game-container {
+  position: relative;
+  width: 960px;
+  height: 540px;
+  background: #000;
+  border: 4px solid var(--ui-border);
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
 }
 
 #game-canvas {
-  border: 1px solid #fff;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  border-bottom: 2px solid var(--ui-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.hud-left {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.heart {
+  width: 24px;
+  height: 24px;
+}
+
+.audience-bar {
+  flex: 1;
+  max-width: 400px;
+  margin: 0 20px;
+}
+
+.audience-label {
+  font-size: 12px;
+  margin-bottom: 2px;
+  text-transform: uppercase;
+}
+
+.bar-container {
+  height: 20px;
+  background: #2a2a2a;
+  border: 2px solid var(--ui-border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-red), var(--primary-yellow), #00ff00);
+  transition: width 0.3s ease;
+}
+
+.hud-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+  font-size: 14px;
+}
+
+.masks-equipped {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.mask-slot {
+  width: 48px;
+  height: 48px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid var(--ui-border);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.mask-slot.active {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 10px var(--primary-blue);
+}
+
+.mask-slot img {
+  width: 32px;
+  height: 32px;
+}
+
+.mask-number {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  font-size: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+
+.menu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.95);
+  border: 4px solid var(--primary-blue);
+  padding: 40px;
+  text-align: center;
+  z-index: 100;
+  min-width: 400px;
+}
+
+.menu h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  color: var(--primary-yellow);
+  text-shadow: 0 0 10px var(--primary-yellow);
+}
+
+.menu h2 {
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: var(--primary-blue);
+}
+
+.menu button {
+  background: var(--primary-blue);
+  color: var(--bg-dark);
+  border: none;
+  padding: 15px 40px;
+  font-size: 18px;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 10px;
+  transition: all 0.2s;
+  text-transform: uppercase;
+}
+
+.menu button:hover {
+  background: var(--primary-yellow);
+  transform: scale(1.05);
+}
+
+.menu button:active {
+  transform: scale(0.95);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.game-end {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.95);
+  border: 4px solid var(--primary-red);
+  padding: 40px;
+  text-align: center;
+  z-index: 100;
+  min-width: 400px;
+}
+
+.game-end.victory {
+  border-color: var(--primary-yellow);
+}
+
+.game-end h2 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  color: var(--primary-red);
+}
+
+.game-end.victory h2 {
+  color: var(--primary-yellow);
+}
+
+.game-end p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.score {
+  font-size: 36px;
+  color: var(--primary-blue);
+  margin: 20px 0;
 }

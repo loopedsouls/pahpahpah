@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <!-- Coração vazio -->
+  <path d="M 12 21 L 10 19 Q 4 14 4 10 Q 4 7 6 6 Q 8 5 10 7 Q 12 9 12 9 Q 12 9 14 7 Q 16 5 18 6 Q 20 7 20 10 Q 20 14 14 19 L 12 21 Z" 
+        fill="#3a3a3a" 
+        stroke="#606060" 
+        stroke-width="1.5"/>
+</svg>

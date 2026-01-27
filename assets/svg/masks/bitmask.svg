@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- BITMASK - Máscara com padrão binário -->
+  <defs>
+    <pattern id="binary" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+      <text x="1" y="6" font-size="6" fill="#00ff00" font-family="monospace">01</text>
+    </pattern>
+  </defs>
+  
+  <!-- Base da máscara -->
+  <ellipse cx="16" cy="16" rx="12" ry="14" fill="#1a1a1a" stroke="#00ff00" stroke-width="2"/>
+  
+  <!-- Padrão binário -->
+  <ellipse cx="16" cy="16" rx="10" ry="12" fill="url(#binary)" opacity="0.8"/>
+  
+  <!-- Olhos -->
+  <ellipse cx="11" cy="14" rx="2.5" ry="3" fill="#00ff00"/>
+  <ellipse cx="21" cy="14" rx="2.5" ry="3" fill="#00ff00"/>
+  
+  <!-- Detalhes tech -->
+  <line x1="8" y1="22" x2="24" y2="22" stroke="#00ff00" stroke-width="1"/>
+  <line x1="10" y1="24" x2="22" y2="24" stroke="#00ff00" stroke-width="1"/>
+</svg>

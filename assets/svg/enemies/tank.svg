@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+  <!-- Inimigo Tanque - Grande e forte -->
+  
+  <!-- Corpo grande -->
+  <ellipse cx="20" cy="24" rx="12" ry="14" fill="#8a2020"/>
+  <ellipse cx="20" cy="24" rx="9" ry="11" fill="#a03030"/>
+  
+  <!-- Cabeça -->
+  <circle cx="20" cy="14" r="7" fill="#cd9999"/>
+  
+  <!-- Cabelo curto -->
+  <path d="M 13 14 Q 13 10 20 10 Q 27 10 27 14" fill="#3a2020"/>
+  
+  <!-- Olhos irritados -->
+  <line x1="15" y1="13" x2="17" y2="14" stroke="#000000" stroke-width="2"/>
+  <line x1="23" y1="14" x2="25" y2="13" stroke="#000000" stroke-width="2"/>
+  <circle cx="16" cy="14" r="1" fill="#ff0000"/>
+  <circle cx="24" cy="14" r="1" fill="#ff0000"/>
+  
+  <!-- Boca zangada -->
+  <path d="M 16 18 Q 20 17 24 18" stroke="#000000" stroke-width="1.5" fill="none"/>
+  
+  <!-- Braços musculosos -->
+  <ellipse cx="8" cy="24" rx="5" ry="8" fill="#cd9999"/>
+  <ellipse cx="32" cy="24" rx="5" ry="8" fill="#cd9999"/>
+  
+  <!-- Avental reforçado -->
+  <rect x="14" y="30" width="12" height="8" rx="1" fill="#6a4020"/>
+  <line x1="16" y1="32" x2="24" y2="32" stroke="#4a3020" stroke-width="1.5"/>
+  <line x1="16" y1="35" x2="24" y2="35" stroke="#4a3020" stroke-width="1.5"/>
+  
+  <!-- Placas de proteção -->
+  <rect x="17" y="21" width="6" height="4" rx="0.5" fill="#505050" opacity="0.8"/>
+  
+  <!-- Indicador de tanque -->
+  <rect x="18" y="5" width="4" height="4" rx="1" fill="#ff0000" opacity="0.8"/>
+  <line x1="20" y1="6" x2="20" y2="8" stroke="#ffffff" stroke-width="1.5"/>
+  <line x1="19" y1="7" x2="21" y2="7" stroke="#ffffff" stroke-width="1.5"/>
+</svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- DATA MASK - Máscara com padrão de criptografia -->
+  <defs>
+    <pattern id="crypto" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="2" height="2" fill="#ff6600"/>
+      <rect x="2" y="2" width="2" height="2" fill="#ff6600"/>
+    </pattern>
+  </defs>
+  
+  <!-- Base da máscara -->
+  <ellipse cx="16" cy="16" rx="12" ry="14" fill="#1a1a1a" stroke="#ff6600" stroke-width="2"/>
+  
+  <!-- Padrão de dados -->
+  <ellipse cx="16" cy="16" rx="10" ry="12" fill="url(#crypto)" opacity="0.3"/>
+  
+  <!-- Linhas de código -->
+  <line x1="8" y1="10" x2="15" y2="10" stroke="#ff6600" stroke-width="1.5"/>
+  <line x1="17" y1="10" x2="24" y2="10" stroke="#ff6600" stroke-width="1.5"/>
+  <line x1="8" y1="18" x2="12" y2="18" stroke="#ff6600" stroke-width="1"/>
+  <line x1="20" y1="18" x2="24" y2="18" stroke="#ff6600" stroke-width="1"/>
+  
+  <!-- Olhos -->
+  <rect x="9" y="12" width="4" height="5" rx="1" fill="#ff6600"/>
+  <rect x="19" y="12" width="4" height="5" rx="1" fill="#ff6600"/>
+  
+  <!-- Símbolo de cadeado -->
+  <rect x="14" y="23" width="4" height="3" rx="0.5" fill="#ff6600"/>
+  <path d="M 15 23 V 21 Q 16 20 17 21 V 23" stroke="#ff6600" fill="none" stroke-width="1.5"/>
+</svg>

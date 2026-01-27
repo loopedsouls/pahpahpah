@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Jogador - Vista de cima -->
+  
+  <!-- Corpo -->
+  <ellipse cx="16" cy="18" rx="8" ry="10" fill="#4080ff"/>
+  <ellipse cx="16" cy="18" rx="6" ry="8" fill="#6090ff"/>
+  
+  <!-- Cabeça -->
+  <circle cx="16" cy="12" r="6" fill="#ffcc99"/>
+  
+  <!-- Cabelo -->
+  <path d="M 10 12 Q 10 8 16 8 Q 22 8 22 12" fill="#4a3020"/>
+  
+  <!-- Olhos -->
+  <circle cx="13" cy="12" r="1.5" fill="#000000"/>
+  <circle cx="19" cy="12" r="1.5" fill="#000000"/>
+  
+  <!-- Braços -->
+  <ellipse cx="10" cy="18" rx="3" ry="5" fill="#ffcc99"/>
+  <ellipse cx="22" cy="18" rx="3" ry="5" fill="#ffcc99"/>
+  
+  <!-- Avental -->
+  <rect x="12" y="22" width="8" height="6" rx="1" fill="#ffffff" opacity="0.8"/>
+</svg>
