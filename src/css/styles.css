@@ -40,6 +40,10 @@ body {
   height: 100%;
   image-rendering: pixelated;
   image-rendering: crisp-edges;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 
 .hud {
