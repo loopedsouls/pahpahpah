@@ -5,9 +5,16 @@ using System.Collections;
 
 public class MainMenuManager : MonoBehaviour
 {
+    private void Awake()
+    {
+        Debug.Log("🚨🚨🚨 MainMenuManager.Awake() CHAMADO! 🚨🚨🚨");
+        Debug.LogWarning("=== INICIANDO CRIAÇÃO DO MENU ===");
+    }
+
     private void Start()
     {
         Debug.Log("🎭 MainMenuManager.Start() CHAMADO!");
+        Debug.LogWarning("🔨 Chamando CreatePahPahPahMainMenu()...");
         CreatePahPahPahMainMenu();
     }
 
