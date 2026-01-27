@@ -1,0 +1,18 @@
+{
+  "name": "pahpahpah",
+  "version": "1.0.0",
+  "description": "PÁ PÁ PÁ: THE MASK GAME - Arena arcade top-down shooter PWA",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx live-server --port=3000",
+    "build": "echo 'Build script placeholder - add bundler like Vite or Webpack'"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "keywords": ["game", "pwa", "arcade", "top-down", "shooter"],
+  "author": "Your Name",
+  "license": "MIT"
+}
