@@ -1,0 +1,39 @@
+<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+  <!-- Torta de Creme - Projectile -->
+  <defs>
+    <radialGradient id="creamGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FFFEF0;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#FFF8DC;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F5E6B3;stop-opacity:1" />
+    </radialGradient>
+    <radialGradient id="plateGradient" cx="50%" cy="60%" r="50%">
+      <stop offset="0%" style="stop-color:#E0E0E0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#999999;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Prato de alumínio -->
+  <ellipse cx="8" cy="11" rx="6.5" ry="2" fill="url(#plateGradient)" stroke="#777777" stroke-width="0.4"/>
+  
+  <!-- Base do creme -->
+  <ellipse cx="8" cy="9" rx="6" ry="1.5" fill="#F5DEB3" stroke="#D4C197" stroke-width="0.3"/>
+  
+  <!-- Creme montado -->
+  <circle cx="8" cy="7" r="5" fill="url(#creamGradient)" stroke="#E6D8A8" stroke-width="0.4"/>
+  
+  <!-- Detalhes de textura do creme -->
+  <circle cx="6" cy="6" r="1.5" fill="#FFFFFF" opacity="0.6"/>
+  <circle cx="10" cy="7" r="1.2" fill="#FFFFFF" opacity="0.5"/>
+  <circle cx="8" cy="4" r="1" fill="#FFFFFF" opacity="0.7"/>
+  
+  <!-- Topping - cereja no topo -->
+  <circle cx="8" cy="3" r="1.2" fill="#CC3333" stroke="#991111" stroke-width="0.3"/>
+  <line x1="8" y1="1.8" x2="8" y2="3" stroke="#664422" stroke-width="0.4"/>
+  
+  <!-- Brilho -->
+  <ellipse cx="6.5" cy="5.5" rx="1.5" ry="2" fill="#FFFFFF" opacity="0.4"/>
+  
+  <!-- Gotas de creme -->
+  <path d="M 3.5 8 Q 3 9 3.5 10" fill="none" stroke="#F5E6B3" stroke-width="0.8" stroke-linecap="round"/>
+  <path d="M 12.5 8.5 Q 13 9.5 12.5 10.5" fill="none" stroke="#F5E6B3" stroke-width="0.8" stroke-linecap="round"/>
+</svg>

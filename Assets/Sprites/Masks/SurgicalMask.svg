@@ -1,0 +1,44 @@
+<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <!-- Surgical Mask - Máscara cirúrgica hospitalar -->
+  <defs>
+    <linearGradient id="whiteGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E0E0E0;stop-opacity:1" />
+    </linearGradient>
+    <pattern id="fabric" x="0" y="0" width="2" height="2" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="0.3" fill="#CCCCCC" opacity="0.3"/>
+    </pattern>
+  </defs>
+  
+  <!-- Elástico esquerdo -->
+  <path d="M 3 8 Q 2 10 3 12" fill="none" stroke="#6699CC" stroke-width="0.8"/>
+  
+  <!-- Base da máscara retangular -->
+  <rect x="5" y="7" width="14" height="10" rx="1" 
+        fill="url(#whiteGradient)" stroke="#CCCCCC" stroke-width="0.6"/>
+  
+  <!-- Textura de tecido -->
+  <rect x="5" y="7" width="14" height="10" fill="url(#fabric)"/>
+  
+  <!-- Pregas da máscara -->
+  <line x1="5" y1="9.5" x2="19" y2="9.5" stroke="#DDDDDD" stroke-width="0.4"/>
+  <line x1="5" y1="12" x2="19" y2="12" stroke="#DDDDDD" stroke-width="0.4"/>
+  <line x1="5" y1="14.5" x2="19" y2="14.5" stroke="#DDDDDD" stroke-width="0.4"/>
+  
+  <!-- Clipe nasal metálico -->
+  <rect x="10" y="6.5" width="4" height="0.8" rx="0.3" fill="#AAAAAA" stroke="#888888" stroke-width="0.3"/>
+  
+  <!-- Cruz médica vermelha -->
+  <rect x="11" y="10.5" width="2" height="5" fill="#FF3333" opacity="0.8"/>
+  <rect x="9.5" y="12" width="5" height="2" fill="#FF3333" opacity="0.8"/>
+  
+  <!-- Elástico direito -->
+  <path d="M 21 8 Q 22 10 21 12" fill="none" stroke="#6699CC" stroke-width="0.8"/>
+  
+  <!-- Bordas reforçadas -->
+  <rect x="5" y="7" width="14" height="10" rx="1" 
+        fill="none" stroke="#AAAAAA" stroke-width="0.5"/>
+  
+  <!-- Reflexo de higiene -->
+  <ellipse cx="8" cy="9" rx="2" ry="1" fill="#FFFFFF" opacity="0.4"/>
+</svg>

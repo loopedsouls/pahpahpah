@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5000000000000001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5000000000000002}
+  - component: {fileID: 5000000000000003}
+  - component: {fileID: 5000000000000004}
+  - component: {fileID: 5000000000000005}
+  - component: {fileID: 5000000000000006}
+  m_Layer: 0
+  m_Name: Pie
+  m_TagString: Projectile
+  m_Icon: {fileID: 0}
+  m_IsActive: 1
+--- !u!4 &5000000000000002
+Transform:
+  m_GameObject: {fileID: 5000000000000001}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+--- !u!212 &5000000000000003
+SpriteRenderer:
+  m_GameObject: {fileID: 5000000000000001}
+  m_Enabled: 1
+  m_Sprite: {fileID: 0}
+--- !u!50 &5000000000000004
+Rigidbody2D:
+  m_GameObject: {fileID: 5000000000000001}
+  m_BodyType: 0
+  m_Mass: 0.5
+  m_GravityScale: 0
+--- !u!58 &5000000000000005
+CircleCollider2D:
+  m_GameObject: {fileID: 5000000000000001}
+  m_Enabled: 1
+  m_IsTrigger: 1
+  m_Radius: 0.08
+--- !u!114 &5000000000000006
+MonoBehaviour:
+  m_GameObject: {fileID: 5000000000000001}
+  m_Enabled: 1
+  m_Script: {fileID: 11500000, guid: 6a528d6d11ec8ae6ca60b468c0331871, type: 3}
+  speed: 10
+  damage: 1
+  lifetime: 3

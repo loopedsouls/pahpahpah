@@ -1,0 +1,22 @@
+<svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+  <!-- Coração Cheio -->
+  <defs>
+    <radialGradient id="heartGradient" cx="40%" cy="30%" r="60%">
+      <stop offset="0%" style="stop-color:#FF4444;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#CC0000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#990000;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Formato do coração -->
+  <path d="M 8 14 Q 2 10 2 6 Q 2 3 4.5 3 Q 6 3 8 5 Q 10 3 11.5 3 Q 14 3 14 6 Q 14 10 8 14 Z" 
+        fill="url(#heartGradient)" stroke="#660000" stroke-width="0.5"/>
+  
+  <!-- Brilho -->
+  <ellipse cx="5.5" cy="5" rx="1.5" ry="2" fill="#FFFFFF" opacity="0.5"/>
+  <ellipse cx="9" cy="6" rx="1" ry="1.5" fill="#FFFFFF" opacity="0.3"/>
+  
+  <!-- Contorno interior -->
+  <path d="M 8 13 Q 3 10 3 6.5 Q 3 4 5 4 Q 6.5 4 8 6 Q 9.5 4 11 4 Q 13 4 13 6.5 Q 13 10 8 13 Z" 
+        fill="none" stroke="#FF6666" stroke-width="0.3" opacity="0.4"/>
+</svg>

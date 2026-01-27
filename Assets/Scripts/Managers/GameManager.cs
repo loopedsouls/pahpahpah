@@ -129,4 +129,27 @@ public class GameManager : MonoBehaviour
         SetState(GameState.Menu);
         SceneManager.LoadScene("MainMenu");
     }
+
+    public void RestartGame()
+    {
+        SetState(GameState.Playing);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void TogglePause()
+    {
+        if (currentState == GameState.Playing)
+            PauseGame();
+        else if (currentState == GameState.Paused)
+            ResumeGame();
+    }
+
+    public void QuitGame()
+    {
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #else
+        Application.Quit();
+        #endif
+    }
 }

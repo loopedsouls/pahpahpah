@@ -37,6 +37,10 @@ public class WaveManager : MonoBehaviour
     private void Start()
     {
         EnemyBase.OnEnemyDeath += HandleEnemyDeath;
+    }
+
+    public void StartWaves()
+    {
         StartNextWave();
     }
 

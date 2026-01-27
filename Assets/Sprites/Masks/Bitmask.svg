@@ -1,0 +1,22 @@
+<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bitGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00FF88;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00CC44;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <path d="M 4 12 Q 4 6 12 6 Q 20 6 20 12 Q 20 16 16 18 Q 12 20 8 18 Q 4 16 4 12 Z" 
+        fill="url(#bitGreen)" stroke="#008833" stroke-width="0.8"/>
+  
+  <ellipse cx="9" cy="11" rx="2.5" ry="3" fill="#000000" stroke="#004422" stroke-width="0.5"/>
+  <ellipse cx="15" cy="11" rx="2.5" ry="3" fill="#000000" stroke="#004422" stroke-width="0.5"/>
+  
+  <text x="7" y="10" font-size="2" fill="#003311" font-family="monospace" font-weight="bold">1</text>
+  <text x="11" y="13" font-size="2" fill="#003311" font-family="monospace" font-weight="bold">0</text>
+  <text x="15" y="10" font-size="2" fill="#003311" font-family="monospace" font-weight="bold">1</text>
+  
+  <ellipse cx="7" cy="8" rx="2" ry="1.5" fill="#AAFFCC" opacity="0.4"/>
+  <line x1="5" y1="15" x2="8" y2="15" stroke="#00FF88" stroke-width="0.3" opacity="0.6"/>
+  <line x1="16" y1="15" x2="19" y2="15" stroke="#00FF88" stroke-width="0.3" opacity="0.6"/>
+</svg>
