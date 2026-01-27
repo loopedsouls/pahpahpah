@@ -9,29 +9,29 @@
 - [ ] Criar cena principal (Game)
 
 ### Core Gameplay (Horas 5-12)
-- [ ] **PlayerController.cs** - Movimento (WASD)
-- [ ] **PlayerController.cs** - Mira (Mouse)
-- [ ] **PlayerController.cs** - Dash (Space/Shift)
-- [ ] **PieProjectile.cs** - Sistema de tiro
-- [ ] **HealthSystem.cs** - Sistema de vida (5 vidas)
-- [ ] **BasicEnemy.cs** - Inimigo básico (persegue jogador)
-- [ ] Colisão e dano funcionando
-- [ ] HUD básico (corações)
+- [x] **PlayerController.cs** - Movimento (WASD)
+- [x] **PlayerController.cs** - Mira (Mouse)
+- [x] **PlayerController.cs** - Dash (Space/Shift)
+- [x] **PieProjectile.cs** - Sistema de tiro
+- [x] **HealthSystem.cs** - Sistema de vida (5 vidas)
+- [x] **BasicEnemy.cs** - Inimigo básico (persegue jogador)
+- [x] Colisão e dano funcionando
+- [x] HUD básico (corações)
 
 ### Sistema de Máscaras (Horas 13-18)
-- [ ] **MaskData.cs** (ScriptableObject) - Dados da máscara
-- [ ] **MaskSystem.cs** - Equipar/trocar máscaras (1-3)
-- [ ] **Bitmask.cs** - Poder: tortas em área
-- [ ] **AlphaMask.cs** - Poder: dash invencível
-- [ ] **MaskPickup.cs** - Coleta de máscaras no chão
-- [ ] UI de máscaras equipadas
+- [x] **MaskData.cs** (ScriptableObject) - Dados da máscara
+- [x] **MaskSystem.cs** - Equipar/trocar máscaras (1-3)
+- [x] **Bitmask.cs** - Poder: tortas em área
+- [x] **AlphaMask.cs** - Poder: dash invencível
+- [x] **MaskPickup.cs** - Coleta de máscaras no chão
+- [x] UI de máscaras equipadas
 
 ### Arena e Ondas (Horas 19-24)
-- [ ] **WaveManager.cs** - Sistema de ondas
+- [x] **WaveManager.cs** - Sistema de ondas
 - [ ] **ArenaManager.cs** - Gerenciador da arena
 - [ ] Arena 1 (Teste) completa
-- [ ] Spawn de inimigos em ondas
-- [ ] Condição de vitória (todos inimigos derrotados)
+- [x] Spawn de inimigos em ondas
+- [x] Condição de vitória (todos inimigos derrotados)
 
 ---
 
@@ -44,24 +44,24 @@
 - [ ] Balancear ondas
 
 ### Inimigos e Boss (Horas 31-36)
-- [ ] **ShooterEnemy.cs** - Atirador (mantém distância, atira)
-- [ ] **TankEnemy.cs** - Tanque (HP: 3, lento, knockback)
+- [x] **ShooterEnemy.cs** - Atirador (mantém distância, atira)
+- [x] **TankEnemy.cs** - Tanque (HP: 3, lento, knockback)
 - [ ] **BossController.cs** - O Apresentador Mascarado
 - [ ] Boss Fase 1: teleporte + 3 tortas em leque
 - [ ] Arena 4 (Showdown Final)
 
 ### Sistema de Público (Horas 37-42)
-- [ ] **AudienceMeter.cs** - Barra de público
-- [ ] Sobe: +5% acerto, +8% kill, +10% combo
-- [ ] Desce: -2% miss, -5% dano, -15% inimigo escapa
-- [ ] Feedback visual (emojis/cores)
-- [ ] Game Over se < 20%
-- [ ] Bônus dano se > 80%
+- [x] **AudienceMeter.cs** - Barra de público
+- [x] Sobe: +5% acerto, +8% kill, +10% combo
+- [x] Desce: -2% miss, -5% dano, -15% inimigo escapa
+- [x] Feedback visual (emojis/cores)
+- [x] Game Over se < 20%
+- [x] Bônus dano se > 80%
 
 ### Máscaras Restantes (Horas 43-48)
-- [ ] **DataMask.cs** - Confusão (inimigos desorientados 5s)
-- [ ] **SurgicalMask.cs** - Regeneração (+1 HP a cada 5 acertos)
-- [ ] **ShaderMask.cs** - Slow-motion ao mirar
+- [x] **DataMask.cs** - Confusão (inimigos desorientados 5s)
+- [x] **SurgicalMask.cs** - Regeneração (+1 HP a cada 5 acertos)
+- [x] **ShaderMask.cs** - Slow-motion ao mirar
 - [ ] Balancear cooldowns
 
 ---
@@ -172,19 +172,19 @@ Assets/
 | Dia | Seção | Tarefas | Completo |
 |-----|-------|---------|----------|
 | 1 | Setup | 4 | 0/4 |
-| 1 | Core | 8 | 0/8 |
-| 1 | Máscaras | 6 | 0/6 |
-| 1 | Arena | 5 | 0/5 |
+| 1 | Core | 8 | **8/8** ✅ |
+| 1 | Máscaras | 6 | **6/6** ✅ |
+| 1 | Arena | 5 | 3/5 |
 | 2 | Arenas 2-3 | 4 | 0/4 |
-| 2 | Inimigos | 5 | 0/5 |
-| 2 | Público | 6 | 0/6 |
-| 2 | Máscaras+ | 4 | 0/4 |
+| 2 | Inimigos | 5 | 2/5 |
+| 2 | Público | 6 | **6/6** ✅ |
+| 2 | Máscaras+ | 4 | 3/4 |
 | 3 | Arte | 10 | 0/10 |
 | 3 | Áudio | 8 | 0/8 |
 | 3 | UI/UX | 6 | 0/6 |
 | 3 | Teste | 6 | 0/6 |
 
-**TOTAL: 0/72 tarefas**
+**TOTAL: 28/72 tarefas (~39%)**
 
 ---
 
