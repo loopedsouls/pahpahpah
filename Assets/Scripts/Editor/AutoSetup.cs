@@ -27,6 +27,7 @@ public class AutoSetup
         SetupLayers();
         SetupPrefabs();
         SetupScriptableObjects();
+        ApplyRenpyTheme();
         
         Debug.Log("✅ Configuração automática concluída!");
         Debug.Log("🎮 Agora abra a cena Game para testar!");
@@ -64,13 +65,23 @@ public class AutoSetup
     {
         string path = "Assets/Prefabs/Player/Player.prefab";
         GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(path);
-        if (prefab == null) return;
+        if (prefab == null)
+        {
+            Debug.LogWarning("Player prefab não encontrado");
+            return;
+        }
 
         GameObject instance = PrefabUtility.LoadPrefabContents(path);
         
-        // Configurar tag e layer
+        // Configurar tag
         instance.tag = "Player";
-        instance.layer = LayerMask.NameToLayer("Player");
+        
+        // Configurar layer (verificar se existe)
+        int playerLayer = LayerMask.NameToLayer("Player");
+        if (playerLayer >= 0 && playerLayer < 32)
+        {
+            instance.layer = playerLayer;
+        }
         
         // Configurar sprite
         SpriteRenderer sr = instance.GetComponent<SpriteRenderer>();
@@ -87,9 +98,16 @@ public class AutoSetup
         if (controller != null)
         {
             GameObject piePrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Projectiles/Pie.prefab");
-            SerializedObject so = new SerializedObject(controller);
-            so.FindProperty("pieProjectilePrefab").objectReferenceValue = piePrefab;
-            so.ApplyModifiedProperties();
+            if (piePrefab != null)
+            {
+                SerializedObject so = new SerializedObject(controller);
+                SerializedProperty prop = so.FindProperty("pieProjectilePrefab");
+                if (prop != null)
+                {
+                    prop.objectReferenceValue = piePrefab;
+                    so.ApplyModifiedProperties();
+                }
+            }
         }
         
         PrefabUtility.SaveAsPrefabAsset(instance, path);
@@ -100,13 +118,23 @@ public class AutoSetup
     {
         string path = $"Assets/Prefabs/Enemies/{enemyName}.prefab";
         GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(path);
-        if (prefab == null) return;
+        if (prefab == null)
+        {
+            Debug.LogWarning($"{enemyName} prefab não encontrado");
+            return;
+        }
 
         GameObject instance = PrefabUtility.LoadPrefabContents(path);
         
-        // Configurar tag e layer
+        // Configurar tag
         instance.tag = "Enemy";
-        instance.layer = LayerMask.NameToLayer("Enemy");
+        
+        // Configurar layer
+        int enemyLayer = LayerMask.NameToLayer("Enemy");
+        if (enemyLayer >= 0 && enemyLayer < 32)
+        {
+            instance.layer = enemyLayer;
+        }
         
         // Configurar sprite
         SpriteRenderer sr = instance.GetComponent<SpriteRenderer>();
@@ -126,13 +154,23 @@ public class AutoSetup
     {
         string path = "Assets/Prefabs/Projectiles/Pie.prefab";
         GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(path);
-        if (prefab == null) return;
+        if (prefab == null)
+        {
+            Debug.LogWarning("Pie prefab não encontrado");
+            return;
+        }
 
         GameObject instance = PrefabUtility.LoadPrefabContents(path);
         
-        // Configurar tag e layer
+        // Configurar tag
         instance.tag = "Projectile";
-        instance.layer = LayerMask.NameToLayer("Projectile");
+        
+        // Configurar layer
+        int projectileLayer = LayerMask.NameToLayer("Projectile");
+        if (projectileLayer >= 0 && projectileLayer < 32)
+        {
+            instance.layer = projectileLayer;
+        }
         
         // Configurar sprite
         SpriteRenderer sr = instance.GetComponent<SpriteRenderer>();
@@ -152,6 +190,29 @@ public class AutoSetup
     {
         // ScriptableObjects já têm os ícones configurados
         Debug.Log("✓ ScriptableObjects das máscaras já configurados");
+    }
+
+    static void ApplyRenpyTheme()
+    {
+        // Carregar tema do Ren'Py
+        RenpyTheme theme = AssetDatabase.LoadAssetAtPath<RenpyTheme>("Assets/UI/Themes/InvisibleScarsTheme.asset");
+        if (theme != null)
+        {
+            // Aplicar sprites do tema
+            Sprite bgSprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/UI/MenuBackground.png");
+            Sprite panelSprite = AssetDatabase.LoadAssetAtPath<Sprite>("Assets/Sprites/UI/Panel.png");
+            
+            SerializedObject so = new SerializedObject(theme);
+            if (bgSprite != null) so.FindProperty("menuBackground").objectReferenceValue = bgSprite;
+            if (panelSprite != null) so.FindProperty("panel").objectReferenceValue = panelSprite;
+            so.ApplyModifiedProperties();
+            
+            Debug.Log("✓ Tema Ren'Py 'Invisible Scars' aplicado");
+        }
+        else
+        {
+            Debug.LogWarning("Tema Ren'Py não encontrado, criando...");
+        }
     }
 
     [MenuItem("PahPahPah/Create Test Arena")]

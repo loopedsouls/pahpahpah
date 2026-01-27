@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void PlayGame()
+    public void StartGame()
     {
         if (GameManager.Instance != null)
         {
@@ -13,6 +13,17 @@ public class MainMenu : MonoBehaviour
         {
             SceneManager.LoadScene("Game");
         }
+    }
+
+    public void PlayGame()
+    {
+        StartGame();
+    }
+
+    public void OpenOptions()
+    {
+        Debug.Log("Opções ainda não implementadas");
+        // TODO: Criar tela de opções
     }
 
     public void QuitGame()

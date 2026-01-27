@@ -3,7 +3,6 @@
 --- !u!1 &2000000000000001
 GameObject:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
@@ -12,7 +11,6 @@ GameObject:
   - component: {fileID: 2000000000000003}
   - component: {fileID: 2000000000000004}
   - component: {fileID: 2000000000000005}
-  - component: {fileID: 2000000000000006}
   - component: {fileID: 2000000000000007}
   m_Layer: 0
   m_Name: BasicEnemy
@@ -82,7 +80,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.24, y: 0.24}
+  m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -126,8 +124,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.24, y: 0.24}
-    newSize: {x: 0.24, y: 0.24}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -135,21 +133,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.2}
   m_EdgeRadius: 0
---- !u!114 &2000000000000006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2000000000000001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54b31ece02f040d438340dbc6d231a20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 1
-  moveSpeed: 2
-  damage: 1
 --- !u!114 &2000000000000007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,3 +145,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27749f6149dc827e497bae3dff82ff03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 1
+  moveSpeed: 2
+  damage: 1
