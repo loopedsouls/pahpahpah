@@ -20,6 +20,7 @@ class GameStateManager {
     this.bossActive = false;
     this.bossIntroTimer = 0;
     this.bossDefeatedTimer = 0;
+    this.lastTime = 0;
   }
   
   setState(newState) {

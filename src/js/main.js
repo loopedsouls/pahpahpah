@@ -52,7 +52,7 @@ async function init() {
   console.log('Initializing PÁ PÁ PÁ...');
   
   // Initialize canvas
-  Renderer.init('gameCanvas');
+  Renderer.init('game-canvas');
   
   // Load assets with timeout
   try {
@@ -264,7 +264,9 @@ function updateBossFight(dt) {
     currentBoss.update(Player, projectiles, enemies);
     
     // Check player projectiles vs boss collision
+    let bossJustDied = false;
     projectiles.forEach(proj => {
+      if (bossJustDied || !currentBoss.active) return; // Boss already dead, skip
       if (proj.active && proj.isPlayerOwned) {
         const dist = distance(proj.x, proj.y, currentBoss.x, currentBoss.y);
         if (dist < currentBoss.size + proj.size) {
@@ -290,9 +292,10 @@ function updateBossFight(dt) {
             Player.hp = Math.min(Player.hp + 1, Player.maxHp);
           }
           
-          if (currentBoss.hp <= 0) {
+          if (currentBoss.hp <= 0 && currentBoss.active) {
             createBossDeathExplosion(particles, currentBoss.x, currentBoss.y, currentBoss.color);
             currentBoss.active = false;
+            bossJustDied = true;
             Audience.onBossKill();
             GameState.score += 1000;
             
@@ -302,10 +305,16 @@ function updateBossFight(dt) {
             
             GameState.state = 'boss_defeated';
             bossDefeatedTimer = 240; // 4 seconds
+            return; // Exit forEach
           }
         }
       }
     });
+    
+    // Exit function if boss just died
+    if (bossJustDied) {
+      return;
+    }
   }
   
   // Draw entities
@@ -340,7 +349,7 @@ function updateBossDefeated(dt) {
   
   drawBossDefeated(GameState.currentArena, 
     () => particles.forEach(p => p.draw(Renderer)),
-    () => Player.draw(Renderer)
+    () => Player.draw()
   );
   
   bossDefeatedTimer--;
@@ -355,9 +364,12 @@ function updateBossDefeated(dt) {
       GameState.wave = 1;
       GameState.arenaTimer = 0;
       GameState.bossActive = false;
+      spawnTimer = 0;
+      lastSpawnTime = 0;
       
       enemies.clear();
       projectiles.clear();
+      particles.clear();
       currentBoss = null;
       
       Player.applyMaskBonuses();
