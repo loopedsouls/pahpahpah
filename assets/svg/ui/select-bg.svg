@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <!-- Dark gradient background -->
+    <linearGradient id="selectBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#05000a"/>
+      <stop offset="50%" style="stop-color:#150a20"/>
+      <stop offset="100%" style="stop-color:#0a0510"/>
+    </linearGradient>
+    
+    <!-- Spotlight effect -->
+    <radialGradient id="spotlight" cx="50%" cy="30%" r="60%">
+      <stop offset="0%" style="stop-color:rgba(255,215,0,0.15)"/>
+      <stop offset="100%" style="stop-color:rgba(0,0,0,0)"/>
+    </radialGradient>
+    
+    <!-- Character slot glow -->
+    <filter id="slotGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    
+    <!-- Metal Slug style ground -->
+    <linearGradient id="groundGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2a2a3a"/>
+      <stop offset="100%" style="stop-color:#1a1a2a"/>
+    </linearGradient>
+    
+    <!-- Hexagon pattern -->
+    <pattern id="hexPattern" patternUnits="userSpaceOnUse" width="60" height="52">
+      <polygon points="30,0 60,15 60,37 30,52 0,37 0,15" fill="none" stroke="rgba(0,212,255,0.1)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="url(#selectBg)"/>
+  
+  <!-- Hexagon pattern overlay -->
+  <rect width="1920" height="1080" fill="url(#hexPattern)"/>
+  
+  <!-- Spotlight from top -->
+  <rect width="1920" height="1080" fill="url(#spotlight)"/>
+  
+  <!-- Stage/platform area -->
+  <rect x="0" y="750" width="1920" height="330" fill="url(#groundGrad)"/>
+  <line x1="0" y1="750" x2="1920" y2="750" stroke="#ffd700" stroke-width="4"/>
+  
+  <!-- Character slot markers on ground -->
+  <g fill="none" stroke-width="2" opacity="0.5">
+    <ellipse cx="320" cy="850" rx="100" ry="30" stroke="#4080ff"/>
+    <ellipse cx="640" cy="850" rx="100" ry="30" stroke="#00ff00"/>
+    <ellipse cx="960" cy="850" rx="100" ry="30" stroke="#00ffff"/>
+    <ellipse cx="1280" cy="850" rx="100" ry="30" stroke="#ff00ff"/>
+    <ellipse cx="1600" cy="850" rx="100" ry="30" stroke="#00ff88"/>
+  </g>
+  
+  <!-- Header area -->
+  <rect x="0" y="0" width="1920" height="120" fill="rgba(0,0,0,0.5)"/>
+  <line x1="0" y1="120" x2="1920" y2="120" stroke="#00d4ff" stroke-width="2"/>
+  
+  <!-- Side decorations -->
+  <g opacity="0.3">
+    <!-- Left side arcade art -->
+    <rect x="20" y="200" width="80" height="400" fill="none" stroke="#ff00ff" stroke-width="2"/>
+    <circle cx="60" cy="300" r="25" fill="none" stroke="#ffd700" stroke-width="2"/>
+    <circle cx="60" cy="400" r="25" fill="none" stroke="#00d4ff" stroke-width="2"/>
+    <circle cx="60" cy="500" r="25" fill="none" stroke="#00ff00" stroke-width="2"/>
+    
+    <!-- Right side arcade art -->
+    <rect x="1820" y="200" width="80" height="400" fill="none" stroke="#ff00ff" stroke-width="2"/>
+    <circle cx="1860" cy="300" r="25" fill="none" stroke="#ffd700" stroke-width="2"/>
+    <circle cx="1860" cy="400" r="25" fill="none" stroke="#00d4ff" stroke-width="2"/>
+    <circle cx="1860" cy="500" r="25" fill="none" stroke="#00ff00" stroke-width="2"/>
+  </g>
+  
+  <!-- Bottom instruction bar -->
+  <rect x="0" y="1000" width="1920" height="80" fill="rgba(0,0,0,0.7)"/>
+  <line x1="0" y1="1000" x2="1920" y2="1000" stroke="#ffd700" stroke-width="2"/>
+  
+  <!-- Scanlines -->
+  <defs>
+    <pattern id="scanlines2" patternUnits="userSpaceOnUse" width="4" height="4">
+      <rect width="4" height="2" fill="rgba(0,0,0,0.2)"/>
+    </pattern>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#scanlines2)" opacity="0.4"/>
+</svg>

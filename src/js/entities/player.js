@@ -23,6 +23,7 @@ class PlayerEntity {
     this.maxHp = CONFIG.PLAYER.HP;
     this.angle = 0;
     this.color = '#4080ff';
+    this.characterId = 'player';
     
     this.shootCooldown = 0;
     this.shootDelay = CONFIG.PLAYER.SHOOT_DELAY;
@@ -150,15 +151,19 @@ class PlayerEntity {
     Renderer.translate(this.x, this.y);
     Renderer.rotate(this.angle);
     
-    const img = Assets.get('player');
-    if (Assets.isReady('player')) {
+    // If playing as a boss, use boss sprite
+    const isBossCharacter = this.characterId !== 'player';
+    const spriteKey = isBossCharacter ? `boss-${this.characterId}` : 'player';
+    const img = Assets.get(spriteKey);
+    
+    if (img && img.complete) {
       Renderer.drawImage(img, -this.size, -this.size, this.size * 2, this.size * 2);
     } else {
       Renderer.drawCircle(0, 0, this.size, this.color);
     }
     
-    // Draw active mask on player's face (smaller, centered on head)
-    if (this.activeMask !== null && this.masks[this.activeMask]) {
+    // Draw active mask on player's face (only for main character)
+    if (!isBossCharacter && this.activeMask !== null && this.masks[this.activeMask]) {
       const maskImg = Assets.get(this.masks[this.activeMask]);
       if (maskImg && maskImg.complete) {
         const maskSize = this.size * 0.8; // Smaller mask for face only

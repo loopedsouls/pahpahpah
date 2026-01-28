@@ -236,3 +236,255 @@ body {
   color: var(--primary-blue);
   margin: 20px 0;
 }
+
+/* Character Selection Screen */
+.character-select {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #05000a 0%, #150a20 50%, #0a0510 100%);
+}
+
+.select-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../assets/svg/ui/select-bg.svg') center/cover;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.select-header {
+  padding: 20px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  border-bottom: 3px solid var(--primary-blue);
+  position: relative;
+  z-index: 1;
+}
+
+.select-header h1 {
+  font-size: 36px;
+  color: var(--primary-yellow);
+  text-shadow: 0 0 20px var(--primary-yellow);
+  margin: 0;
+}
+
+.credits-display {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 24px;
+  color: var(--primary-yellow);
+}
+
+.credits-display span {
+  color: #0f0;
+  font-size: 28px;
+}
+
+.characters-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 20px;
+  padding: 40px 20px;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.char-slot {
+  width: 160px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 15px;
+  border: 3px solid transparent;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.char-slot:hover {
+  transform: translateY(-10px);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.char-slot.selected {
+  transform: translateY(-20px) scale(1.1);
+  border-color: var(--primary-yellow);
+  box-shadow: 0 0 30px var(--primary-yellow), 0 10px 40px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 215, 0, 0.1);
+}
+
+.char-slot.locked {
+  filter: grayscale(0.8);
+  opacity: 0.6;
+}
+
+.char-slot.locked:hover {
+  filter: grayscale(0.5);
+  opacity: 0.8;
+}
+
+.char-portrait {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--primary-blue);
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.char-slot.selected .char-portrait {
+  border-color: var(--primary-yellow);
+  box-shadow: 0 0 20px var(--primary-yellow);
+}
+
+.char-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lock-icon {
+  font-size: 48px;
+}
+
+.char-name {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--primary-blue);
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.char-slot.selected .char-name {
+  color: var(--primary-yellow);
+}
+
+.character-info {
+  min-height: 150px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  border-top: 2px solid var(--primary-blue);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.character-info.shake {
+  animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
+}
+
+.info-locked h2 {
+  color: #666;
+  font-size: 28px;
+}
+
+.info-locked p {
+  color: #888;
+  font-size: 16px;
+}
+
+.info-unlocked h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 15px currentColor;
+}
+
+.char-desc {
+  color: #aaa;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.char-stats {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 10px;
+}
+
+.char-stats .stat {
+  font-size: 14px;
+}
+
+.char-stats .stat span {
+  color: var(--primary-blue);
+  margin-right: 5px;
+}
+
+.powers-info {
+  color: var(--primary-yellow);
+  font-size: 14px;
+}
+
+.arena-info {
+  color: #888;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.select-footer {
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.9);
+  border-top: 2px solid var(--primary-yellow);
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  font-size: 14px;
+  color: #888;
+  position: relative;
+  z-index: 1;
+}
+
+.select-footer span {
+  padding: 5px 15px;
+  border: 1px solid #444;
+  border-radius: 5px;
+}
+
+.insert-coin {
+  color: var(--primary-yellow) !important;
+  border-color: var(--primary-yellow) !important;
+  animation: blink 1s infinite;
+}
+
+.insert-coin.flash {
+  animation: flash 0.5s ease;
+  color: #f00 !important;
+  border-color: #f00 !important;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes flash {
+  0%, 100% { background: transparent; }
+  50% { background: rgba(255, 0, 0, 0.3); }
+}
+
+/* Menu background */
+.menu {
+  background: url('../assets/svg/ui/menu-bg.svg') center/cover, rgba(0, 0, 0, 0.95);
+}

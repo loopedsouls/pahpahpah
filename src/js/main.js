@@ -12,6 +12,7 @@ import { Renderer } from './core/renderer.js';
 import { ARENAS, getArena } from './data/arenas.js';
 import { MASK_EFFECTS } from './data/masks.js';
 import { getBossStats } from './data/bosses.js';
+import { CHARACTERS, getCharacter, getPowersForLevel } from './data/characters.js';
 
 import { Player } from './entities/player.js';
 import { Enemy } from './entities/enemy.js';
@@ -24,9 +25,12 @@ import { Audience } from './systems/audience.js';
 import { MaskState } from './systems/maskState.js';
 import { WaveManager } from './systems/waves.js';
 import { checkProjectileEnemyCollision, checkProjectilePlayerCollision, checkEnemyPlayerCollision, getEnemiesInRadius } from './systems/collision.js';
+import { SaveSystem } from './systems/saveSystem.js';
+import { Credits } from './systems/credits.js';
 
 import { HUD } from './ui/hud.js';
 import { Menu } from './ui/menu.js';
+import { CharacterSelect } from './ui/characterSelect.js';
 import { drawBossIntro, drawBossDefeated, drawPauseScreen, drawSlowMotionOverlay, drawInvincibilityEffect } from './ui/overlays.js';
 
 import { distance, angleToTarget, lerp } from './utils/math.js';
@@ -44,6 +48,9 @@ let bossIntroTimer = 0;
 let bossDefeatedTimer = 0;
 let gameOverTimer = 0;
 let victoryTimer = 0;
+
+// Selected character
+let selectedCharacter = 'player';
 
 /**
  * Initialize Game
@@ -73,25 +80,68 @@ async function init() {
 
 function showMainMenu() {
   Menu.showMain(() => {
-    startGame();
+    showCharacterSelect();
   });
 }
 
-function startGame() {
-  resetGame();
+function showCharacterSelect() {
+  CharacterSelect.show(
+    (characterId) => {
+      selectedCharacter = characterId;
+      startGame(characterId);
+    },
+    () => {
+      showMainMenu();
+    }
+  );
+}
+
+function startGame(characterId = 'player') {
+  resetGame(characterId);
   HUD.create();
   GameState.state = 'playing';
   requestAnimationFrame(gameLoop);
 }
 
-function resetGame() {
+function resetGame(characterId = 'player') {
   GameState.reset();
   Audience.reset();
   MaskState.reset();
   
+  // Setup player based on selected character
+  const char = getCharacter(characterId);
   Player.reset();
   Player.x = Renderer.width / 2;
   Player.y = Renderer.height / 2;
+  
+  // Apply character stats
+  Player.speed = char.speed;
+  Player.maxHp = char.hp;
+  Player.hp = char.hp;
+  Player.shootDelay = char.shootDelay;
+  Player.dashDistance = char.dashDistance;
+  Player.color = char.color;
+  Player.characterId = characterId;
+  
+  // If playing as a boss character, give powers up to their level
+  if (char.powersUpTo) {
+    const powers = getPowersForLevel(char.powersUpTo);
+    powers.forEach(maskId => Player.addMask(maskId));
+  } else {
+    // Main character gets powers based on unlocked bosses
+    const unlockedCount = SaveSystem.getUnlockedCount();
+    const powers = getPowersForLevel(unlockedCount);
+    powers.forEach(maskId => Player.addMask(maskId));
+  }
+  
+  // Set starting arena based on character
+  if (char.arena) {
+    // Find arena index for this character's arena
+    const arenaIndex = ARENAS.findIndex(a => a.id === char.arena);
+    if (arenaIndex >= 0) {
+      GameState.currentArena = arenaIndex;
+    }
+  }
   
   enemies.clear();
   projectiles.clear();
@@ -201,18 +251,11 @@ function updatePlaying(dt) {
   // Check collisions
   checkCollisions();
   
-  // Check wave completion
-  if (enemies.count() === 0 && GameState.arenaTimer > 120 && !GameState.bossActive) {
-    if (GameState.wave >= GameState.maxWaves) {
-      // Start boss fight
-      GameState.state = 'boss_intro';
-      bossIntroTimer = 180; // 3 seconds
-    } else {
-      // Next wave
-      GameState.wave++;
-      Audience.onWaveComplete();
-      spawnTimer = 0;
-    }
+  // Check if score crossed 1000 threshold for boss fight
+  if (!GameState.bossActive && GameState.shouldTriggerBoss()) {
+    GameState.lastBossArena = GameState.currentArena;
+    GameState.state = 'boss_intro';
+    bossIntroTimer = 180; // 3 seconds
   }
   
   // Check audience empty
@@ -303,6 +346,9 @@ function updateBossFight(dt) {
             const arena = getArena(GameState.currentArena);
             Player.addMask(arena.mask);
             
+            // Unlock boss as playable character
+            SaveSystem.unlockBoss(arena.mask);
+            
             GameState.state = 'boss_defeated';
             bossDefeatedTimer = 240; // 4 seconds
             return; // Exit forEach
@@ -386,16 +432,63 @@ function updateGameOver(dt) {
   gameOverTimer--;
   if (gameOverTimer <= 0 && gameOverTimer > -999) {
     gameOverTimer = -1000;
+    
+    // Update high score
+    SaveSystem.updateHighScore(GameState.score);
+    
+    // Save current arena and score for continue
+    const continueArena = GameState.currentArena;
+    const continueScore = GameState.score;
+    const continueThreshold = GameState.lastBossThreshold;
+    
     document.getElementById('hud')?.remove();
     document.getElementById('masks-equipped')?.remove();
     Menu.showGameOver(
-      () => startGame(),
+      () => continueGame(selectedCharacter, continueArena, continueScore, continueThreshold),
       () => {
         GameState.state = 'menu';
         showMainMenu();
-      }
+      },
+      () => startBossFightDirect(GameState.lastBossArena),
+      GameState.lastBossArena
     );
   }
+}
+
+/**
+ * Continue game from current arena
+ */
+function continueGame(characterId, arenaIndex, score, threshold) {
+  resetGame(characterId);
+  HUD.create();
+  
+  // Restore arena and score
+  GameState.currentArena = arenaIndex;
+  GameState.score = score;
+  GameState.lastBossThreshold = threshold;
+  GameState.lastBossArena = arenaIndex;
+  
+  GameState.state = 'playing';
+  requestAnimationFrame(gameLoop);
+}
+
+/**
+ * Start directly at boss fight (for retry)
+ */
+function startBossFightDirect(arenaIndex) {
+  resetGame(selectedCharacter);
+  HUD.create();
+  
+  // Set to the arena for the boss fight
+  GameState.currentArena = arenaIndex;
+  GameState.score = arenaIndex * 1000; // Give score equivalent to reaching that boss
+  GameState.lastBossThreshold = arenaIndex;
+  GameState.lastBossArena = arenaIndex;
+  
+  // Go directly to boss intro
+  GameState.state = 'boss_intro';
+  bossIntroTimer = 180;
+  requestAnimationFrame(gameLoop);
 }
 
 /**
@@ -405,10 +498,14 @@ function updateVictory(dt) {
   victoryTimer--;
   if (victoryTimer <= 0 && victoryTimer > -999) {
     victoryTimer = -1000;
+    
+    // Update high score
+    SaveSystem.updateHighScore(GameState.score);
+    
     document.getElementById('hud')?.remove();
     document.getElementById('masks-equipped')?.remove();
     Menu.showVictory(
-      () => startGame(),
+      () => startGame(selectedCharacter),
       () => {
         GameState.state = 'menu';
         showMainMenu();

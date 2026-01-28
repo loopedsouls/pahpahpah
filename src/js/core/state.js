@@ -21,6 +21,8 @@ class GameStateManager {
     this.bossIntroTimer = 0;
     this.bossDefeatedTimer = 0;
     this.lastTime = 0;
+    this.lastBossThreshold = 0; // Track score thresholds for boss fights
+    this.lastBossArena = 0; // Track last arena where boss was fought
   }
   
   setState(newState) {
@@ -60,6 +62,16 @@ class GameStateManager {
   
   addKill() {
     this.enemiesKilled++;
+  }
+  
+  // Check if score crossed a new 1000 threshold
+  shouldTriggerBoss() {
+    const threshold = Math.floor(this.score / 1000);
+    if (threshold > this.lastBossThreshold && this.currentArena < 5) {
+      this.lastBossThreshold = threshold;
+      return true;
+    }
+    return false;
   }
 }
 

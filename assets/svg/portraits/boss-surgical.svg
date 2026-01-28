@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="surgicalGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00ff88"/>
+      <stop offset="100%" style="stop-color:#006644"/>
+    </linearGradient>
+    <filter id="healGlow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <circle cx="100" cy="100" r="95" fill="#0a1a10" stroke="#00ff88" stroke-width="4"/>
+  
+  <!-- Medical cross symbols -->
+  <g fill="rgba(0,255,136,0.2)">
+    <rect x="25" y="35" width="8" height="20"/>
+    <rect x="21" y="39" width="16" height="8"/>
+    <rect x="165" y="145" width="8" height="20"/>
+    <rect x="161" y="149" width="16" height="8"/>
+  </g>
+  
+  <!-- Main body - doctor/healer figure -->
+  <g filter="url(#healGlow)">
+    <!-- Head -->
+    <circle cx="100" cy="70" r="40" fill="url(#surgicalGrad)" stroke="#00ff88" stroke-width="2"/>
+    
+    <!-- Body/coat -->
+    <path d="M 60 100 L 50 170 L 80 180 L 100 160 L 120 180 L 150 170 L 140 100 Z" 
+          fill="url(#surgicalGrad)" stroke="#00ff88" stroke-width="2"/>
+  </g>
+  
+  <!-- Surgical mask -->
+  <path d="M 70 75 Q 100 95 130 75 L 125 95 Q 100 105 75 95 Z" 
+        fill="#004422" stroke="#00ff88" stroke-width="2"/>
+  
+  <!-- Eyes above mask -->
+  <ellipse cx="80" cy="55" rx="10" ry="8" fill="#001108"/>
+  <ellipse cx="120" cy="55" rx="10" ry="8" fill="#001108"/>
+  
+  <!-- Glowing pupils -->
+  <circle cx="80" cy="55" r="4" fill="#00ff88"/>
+  <circle cx="120" cy="55" r="4" fill="#00ff88"/>
+  
+  <!-- Medical headband -->
+  <rect x="60" y="35" width="80" height="8" fill="#004422" stroke="#00ff88"/>
+  <circle cx="100" cy="39" r="8" fill="#00ff88" filter="url(#healGlow)"/>
+  
+  <!-- Healing symbol on chest -->
+  <rect x="96" y="120" width="8" height="30" fill="#00ff88"/>
+  <rect x="88" y="130" width="24" height="8" fill="#00ff88"/>
+  
+  <!-- Stethoscope hint -->
+  <path d="M 85 105 Q 70 120 75 140" fill="none" stroke="#00aa66" stroke-width="3"/>
+  <circle cx="75" cy="145" r="8" fill="none" stroke="#00aa66" stroke-width="3"/>
+</svg>

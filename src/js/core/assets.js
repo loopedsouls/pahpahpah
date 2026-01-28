@@ -59,6 +59,18 @@ class AssetLoader {
     this.loadSVG('surgical', 'assets/svg/masks/surgical.svg');
     this.loadSVG('shader', 'assets/svg/masks/shader.svg');
     
+    // UI backgrounds
+    this.loadSVG('menu-bg', 'assets/svg/ui/menu-bg.svg');
+    this.loadSVG('select-bg', 'assets/svg/ui/select-bg.svg');
+    
+    // Character portraits
+    this.loadSVG('portrait-player', 'assets/svg/portraits/player.svg');
+    this.loadSVG('portrait-bitmask', 'assets/svg/portraits/boss-bitmask.svg');
+    this.loadSVG('portrait-alphamask', 'assets/svg/portraits/boss-alphamask.svg');
+    this.loadSVG('portrait-datamask', 'assets/svg/portraits/boss-datamask.svg');
+    this.loadSVG('portrait-surgical', 'assets/svg/portraits/boss-surgical.svg');
+    this.loadSVG('portrait-shader', 'assets/svg/portraits/boss-shader.svg');
+    
     await Promise.all(this.loadingPromises);
     this.loaded = true;
   }
