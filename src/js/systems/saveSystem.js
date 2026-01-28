@@ -87,6 +87,10 @@ class SaveSystemManager {
     };
     this.save();
   }
+  
+  getStats() {
+    return { ...this.data };
+  }
 }
 
 export const SaveSystem = new SaveSystemManager();

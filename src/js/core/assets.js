@@ -61,6 +61,7 @@ class AssetLoader {
     
     // UI backgrounds
     this.loadSVG('menu-bg', 'assets/svg/ui/menu-bg.svg');
+    this.loadSVG('menu-vn-bg', 'assets/svg/ui/menu-vn-bg.svg');
     this.loadSVG('select-bg', 'assets/svg/ui/select-bg.svg');
     
     // Character portraits
