@@ -7,6 +7,28 @@ yarn-error.log*
 # Build outputs
 build/
 dist/
+Build/
+Builds/
+
+# Unity generated - never commit
+Library/
+Temp/
+Logs/
+UserSettings/
+MemoryCaptures/
+Recordings/
+*.csproj
+*.sln
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+sysinfo.txt
 
 # Logs
 *.log
